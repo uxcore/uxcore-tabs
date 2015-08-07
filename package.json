@@ -1,0 +1,43 @@
+{
+  "name": "uxcore-tabs",
+  "version": "0.1.0",
+  "description": "easy tab component based on react",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack-dev-server --progress --colors --port 9090",
+    "build": "webpack --config webpack.build.js",
+    "deploy": "git subtree push --prefix build origin gh-pages"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/uxcore/tabs.git"
+  },
+  "keywords": [
+    "react",
+    "react-component",
+    "uxcore",
+    "tabs",
+    "component"
+  ],
+  "author": "vincent.bian",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/uxcore/tabs/issues"
+  },
+  "homepage": "https://github.com/uxcore/tabs",
+  "dependencies": {
+    "object-assign": "~3.0.0",
+    "rc-tabs": "~5.3.2"
+  },
+  "devDependencies": {
+    "babel-core": "~5.8.21",
+    "babel-loader": "~5.3.2",
+    "css-loader": "~0.15.6",
+    "less": "~2.5.1",
+    "less-loader": "~2.2.0",
+    "react": "~0.13.3",
+    "style-loader": "~0.12.3",
+    "webpack": "~1.11.0",
+    "webpack-dev-server": "~1.10.1"
+  }
+}
