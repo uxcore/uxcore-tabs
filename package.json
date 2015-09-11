@@ -1,10 +1,10 @@
 {
   "name": "uxcore-tabs",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "easy tab component based on react",
-  "main": "index.js",
+  "main": "src/index.js",
   "scripts": {
-    "dev": "webpack-dev-server --progress --colors --port 9090",
+    "dev": "gulp server",
     "build": "webpack --config webpack.build.js",
     "deploy": "git subtree push --prefix build origin gh-pages"
   },
@@ -26,18 +26,23 @@
   },
   "homepage": "https://github.com/uxcore/tabs",
   "dependencies": {
-    "object-assign": "~3.0.0",
+    "classnames": "^2.1.2",
+    "object-assign": "^2.0.0",
+    "react": "^0.13.3",
+    "uxcore-kuma": "~1.0.6",
     "rc-tabs": "~5.3.2"
   },
   "devDependencies": {
-    "babel-core": "~5.8.21",
-    "babel-loader": "~5.3.2",
-    "css-loader": "~0.15.6",
-    "less": "~2.5.1",
-    "less-loader": "~2.2.0",
-    "react": "~0.13.3",
-    "style-loader": "~0.12.3",
-    "webpack": "~1.11.0",
-    "webpack-dev-server": "~1.10.1"
+    "babel-core": "^5.6.18",
+    "babel-loader": "^5.3.1",
+    "browser-sync": "~2.8.2",
+    "console-polyfill": "~0.2.1",
+    "es5-shim": "~4.1.10",
+    "gulp": "~3.9.0",
+    "gulp-concat": "~2.6.0",
+    "gulp-just-replace": "~1.0.2",
+    "gulp-less": "~3.0.3",
+    "gulp-sourcemaps": "~1.5.2",
+    "webpack": "^1.10.5"
   }
 }
