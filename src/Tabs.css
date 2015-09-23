@@ -1,6 +1,6 @@
 /**
  * Tabs Component Style for uxcore
- * @author 
+ * @author
  *
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
@@ -13,5 +13,456 @@
 
 @pager-active-bg:                      @pagination-active-bg;
 @pager-active-color:                   @pagination-active-color;*/
+.kuma-tabs {
+  outline: none;
+  position: relative;
+}
+@font-face {
+  font-family: 'iconfont';
+  src: url('//at.alicdn.com/t/font_1429685559_5814753.eot');
+  /* IE9*/
+  src: url('//at.alicdn.com/t/font_1429685559_5814753.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */ url('//at.alicdn.com/t/font_1429685559_5814753.woff') format('woff'), /* chrome、firefox */ url('//at.alicdn.com/t/font_1429685559_5814753.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/ url('//at.alicdn.com/t/font_1429685559_5814753.svg#iconfont') format('svg');
+  /* iOS 4.1- */
+}
+.kuma-tabs-ink-bar {
+  z-index: 1;
+  position: absolute;
+  margin-top: -3px;
+  background-color: #f90;
+  transform: scaleX(1);
+  transform-origin: 0 0;
+}
+.kuma-tabs-nav-container {
+  font-size: 14px;
+  line-height: 1.5;
+  box-sizing: border-box;
+  overflow: hidden;
+  position: relative;
+  white-space: nowrap;
+}
+.kuma-tabs-tab-prev,
+.kuma-tabs-tab-next {
+  user-select: none;
+  -webkit-user-select: none;
+  z-index: 1;
+  line-height: 36px;
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+  position: absolute;
+}
+.kuma-tabs-tab-prev-icon,
+.kuma-tabs-tab-next-icon {
+  position: relative;
+  display: inline-block;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  line-height: inherit;
+  vertical-align: baseline;
+  text-align: center;
+  text-transform: none;
+  -webkit-font-smoothing: antialiased;
+  -webkit-text-stroke-width: 0;
+  -moz-osx-font-smoothing: grayscale;
+  font-family: sans-serif;
+}
+.kuma-tabs-tab-prev-icon:before,
+.kuma-tabs-tab-next-icon:before {
+  display: block;
+  font-family: "iconfont" !important;
+}
+.kuma-tabs-tab-btn-disabled {
+  cursor: default;
+  color: #ccc;
+}
+.kuma-tabs-nav-wrap {
+  overflow: hidden;
+}
+.kuma-tabs-nav {
+  box-sizing: border-box;
+  padding-left: 0;
+  position: relative;
+  margin: 0;
+  float: left;
+  list-style: none;
+  display: inline-block;
+}
+.kuma-tabs-nav:before,
+.kuma-tabs-nav:after {
+  display: table;
+  content: " ";
+}
+.kuma-tabs-nav:after {
+  clear: both;
+}
+.kuma-tabs-nav div.kuma-tabs-tab-active > a,
+.kuma-tabs-nav div.kuma-tabs-tab-active > a:hover,
+.kuma-tabs-nav div.kuma-tabs-tab-active > a:focus {
+  color: #f90;
+  cursor: default;
+  text-decoration: none;
+}
+.kuma-tabs-nav div.kuma-tabs-tab-disabled {
+  pointer-events: none;
+  cursor: default;
+}
+.kuma-tabs-nav div.kuma-tabs-tab-disabled a {
+  color: #ccc;
+}
+.kuma-tabs-nav .kuma-tabs-tab {
+  box-sizing: border-box;
+  position: relative;
+  display: block;
+}
+.kuma-tabs-nav .kuma-tabs-tab > a {
+  transition: color 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+  padding: 8px 20px;
+  font-weight: 500;
+  display: inline-block;
+  color: #666;
+}
+.kuma-tabs-nav .kuma-tabs-tab > a:hover {
+  color: #f90;
+  cursor: pointer;
+}
+.kuma-tabs-nav .kuma-tabs-tab > a:hover,
+.kuma-tabs-nav .kuma-tabs-tab > a:focus {
+  text-decoration: none;
+}
+.kuma-tabs-tabpane-hidden {
+  display: none;
+}
+.kuma-tabs-content {
+  position: relative;
+  overflow: hidden;
+}
+.kuma-tabs {
+  /*slide*/
+}
+.kuma-tabs-slide-horizontal-backward-enter {
+  display: block !important;
+  transform: translateX(-100%);
+}
+.kuma-tabs-slide-horizontal-backward-enter.kuma-tabs-slide-horizontal-backward-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-horizontal-backward-leave {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateX(0);
+}
+.kuma-tabs-slide-horizontal-backward-leave.kuma-tabs-slide-horizontal-backward-leave-active {
+  transform: translateX(100%);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-horizontal-forward-enter {
+  display: block !important;
+  transform: translateX(100%);
+}
+.kuma-tabs-slide-horizontal-forward-enter.kuma-tabs-slide-horizontal-forward-enter-active {
+  transform: translateX(0);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-horizontal-forward-leave {
+  display: block !important;
+  position: absolute;
+  transform: translateX(0);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.kuma-tabs-slide-horizontal-forward-leave.kuma-tabs-slide-horizontal-forward-leave-active {
+  transform: translateX(-100%);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-vertical-backward-enter {
+  display: block !important;
+  transform: translateY(-100%);
+}
+.kuma-tabs-slide-vertical-backward-enter.kuma-tabs-slide-vertical-backward-enter-active {
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-vertical-backward-leave {
+  display: block !important;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  transform: translateY(0);
+}
+.kuma-tabs-slide-vertical-backward-leave.kuma-tabs-slide-vertical-backward-leave-active {
+  transform: translateY(100%);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-vertical-forward-enter {
+  display: block !important;
+  transform: translateY(100%);
+}
+.kuma-tabs-slide-vertical-forward-enter.kuma-tabs-slide-vertical-forward-enter-active {
+  transform: translateY(0);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-slide-vertical-forward-leave {
+  display: block !important;
+  position: absolute;
+  transform: translateY(0);
+  top: 0;
+  right: 0;
+  left: 0;
+  bottom: 0;
+}
+.kuma-tabs-slide-vertical-forward-leave.kuma-tabs-slide-vertical-forward-leave-active {
+  transform: translateY(-100%);
+  transition: transform 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-left {
+  border-right: 2px solid #f3f3f3;
+}
+.kuma-tabs-left .kuma-tabs-nav-container {
+  float: left;
+  margin-right: 10px;
+  border-right: 1px solid #f3f3f3;
+}
+.kuma-tabs-left .kuma-tabs-nav-container-scrolling {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.kuma-tabs-left .kuma-tabs-nav-wrap {
+  height: 100%;
+}
+.kuma-tabs-left .kuma-tabs-content {
+  height: 100%;
+}
+.kuma-tabs-left .kuma-tabs-nav-scroll {
+  height: 99999px;
+}
+.kuma-tabs-left .kuma-tabs-nav {
+  transition: top 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-left .kuma-tabs-tab-prev,
+.kuma-tabs-left .kuma-tabs-tab-next {
+  margin-top: -2px;
+  height: 32px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.kuma-tabs-left .kuma-tabs-tab-next {
+  bottom: 0;
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.kuma-tabs-left .kuma-tabs-tab-next-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-left .kuma-tabs-tab-prev {
+  top: 2px;
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.kuma-tabs-left .kuma-tabs-tab-prev-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-left .kuma-tabs-ink-bar {
+  width: 2px;
+  right: 0;
+}
+.kuma-tabs-left .kuma-tabs-ink-bar-transition-forward {
+  transition: bottom 0.3s cubic-bezier(0.35, 0, 0.25, 1), top 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+}
+.kuma-tabs-left .kuma-tabs-ink-bar-transition-backward {
+  transition: bottom 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, top 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-left .kuma-tabs-nav .kuma-tabs-tab {
+  padding: 16px 24px;
+}
+.kuma-tabs-right {
+  border-left: 2px solid #f3f3f3;
+}
+.kuma-tabs-right .kuma-tabs-nav-container {
+  float: right;
+  margin-left: 10px;
+  border-left: 1px solid #f3f3f3;
+}
+.kuma-tabs-right .kuma-tabs-nav-container-scrolling {
+  padding-top: 32px;
+  padding-bottom: 32px;
+}
+.kuma-tabs-right .kuma-tabs-nav-wrap {
+  height: 100%;
+}
+.kuma-tabs-right .kuma-tabs-nav-scroll {
+  height: 99999px;
+}
+.kuma-tabs-right .kuma-tabs-nav {
+  transition: top 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-right .kuma-tabs-tab-prev,
+.kuma-tabs-right .kuma-tabs-tab-next {
+  margin-top: -2px;
+  height: 32px;
+  width: 100%;
+  display: block;
+  text-align: center;
+}
+.kuma-tabs-right .kuma-tabs-tab-next {
+  bottom: 0;
+  transform: rotate(90deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=1);
+}
+.kuma-tabs-right .kuma-tabs-tab-next-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-right .kuma-tabs-tab-prev {
+  top: 2px;
+  transform: rotate(270deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.kuma-tabs-right .kuma-tabs-tab-prev-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-right .kuma-tabs-content {
+  height: 100%;
+}
+.kuma-tabs-right .kuma-tabs-ink-bar {
+  width: 2px;
+  left: 0;
+}
+.kuma-tabs-right .kuma-tabs-ink-bar-transition-forward {
+  transition: bottom 0.3s cubic-bezier(0.35, 0, 0.25, 1), top 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+}
+.kuma-tabs-right .kuma-tabs-ink-bar-transition-backward {
+  transition: bottom 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, top 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-right .kuma-tabs-nav .kuma-tabs-tab {
+  padding: 16px 24px;
+}
+.kuma-tabs-bottom {
+  border-top: 2px solid #f3f3f3;
+}
+.kuma-tabs-bottom .kuma-tabs-nav-container {
+  width: 100%;
+  border-top: 1px solid #f3f3f3;
+}
+.kuma-tabs-bottom .kuma-tabs-nav-container-scrolling {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.kuma-tabs-bottom .kuma-tabs-nav-scroll {
+  width: 99999px;
+}
+.kuma-tabs-bottom .kuma-tabs-nav-wrap {
+  width: 100%;
+}
+.kuma-tabs-bottom .kuma-tabs-content {
+  width: 100%;
+}
+.kuma-tabs-bottom .kuma-tabs-nav {
+  transition: left 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-bottom .kuma-tabs-tab-next {
+  right: 2px;
+}
+.kuma-tabs-bottom .kuma-tabs-tab-next-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-bottom .kuma-tabs-tab-prev {
+  left: 0;
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.kuma-tabs-bottom .kuma-tabs-tab-prev-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-bottom .kuma-tabs-tab-prev,
+.kuma-tabs-bottom .kuma-tabs-tab-next {
+  margin-right: -2px;
+  width: 32px;
+  height: 100%;
+}
+.kuma-tabs-bottom .kuma-tabs-ink-bar {
+  height: 2px;
+  top: 3px;
+  left: 0;
+}
+.kuma-tabs-bottom .kuma-tabs-ink-bar-transition-forward {
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+}
+.kuma-tabs-bottom .kuma-tabs-ink-bar-transition-backward {
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-bottom .kuma-tabs-nav .kuma-tabs-tab {
+  float: left;
+  height: 100%;
+  margin-right: 30px;
+}
+.kuma-tabs-top {
+  border-bottom: 2px solid #f3f3f3;
+}
+.kuma-tabs-top .kuma-tabs-nav-container {
+  width: 100%;
+  border-bottom: 1px solid #f3f3f3;
+}
+.kuma-tabs-top .kuma-tabs-nav-container-scrolling {
+  padding-left: 32px;
+  padding-right: 32px;
+}
+.kuma-tabs-top .kuma-tabs-nav-scroll {
+  width: 99999px;
+}
+.kuma-tabs-top .kuma-tabs-nav-wrap {
+  width: 100%;
+}
+.kuma-tabs-top .kuma-tabs-content {
+  width: 100%;
+}
+.kuma-tabs-top .kuma-tabs-nav {
+  transition: left 0.5s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-top .kuma-tabs-tab-next {
+  right: 2px;
+}
+.kuma-tabs-top .kuma-tabs-tab-next-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-top .kuma-tabs-tab-prev {
+  left: 0;
+  transform: rotate(180deg);
+  filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=2);
+}
+.kuma-tabs-top .kuma-tabs-tab-prev-icon:before {
+  content: "\e651";
+}
+.kuma-tabs-top .kuma-tabs-tab-prev,
+.kuma-tabs-top .kuma-tabs-tab-next {
+  margin-right: -2px;
+  width: 32px;
+  height: 100%;
+}
+.kuma-tabs-top .kuma-tabs-ink-bar {
+  height: 2px;
+  bottom: 0;
+  left: 0;
+}
+.kuma-tabs-top .kuma-tabs-ink-bar-transition-forward {
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1), left 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s;
+}
+.kuma-tabs-top .kuma-tabs-ink-bar-transition-backward {
+  transition: right 0.3s cubic-bezier(0.35, 0, 0.25, 1) 0.09s, left 0.3s cubic-bezier(0.35, 0, 0.25, 1);
+}
+.kuma-tabs-top .kuma-tabs-nav .kuma-tabs-tab {
+  float: left;
+  height: 100%;
+  margin-right: 30px;
+}
 
 /*# sourceMappingURL=Tabs.css.map */
