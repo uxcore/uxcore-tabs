@@ -1,3 +1,20 @@
+# uxcore-tabs
+
+--
+
+## TL;DR
+
+tab ui component for react
+
+#### setup develop environment
+
+```sh
+$ git clone https://github.com/uxcore/uxcore-tabs
+$ cd uxcore-tabs
+$ npm install
+$ gulp server
+```
+
 ## Usage
 
 ```js
@@ -5,7 +22,6 @@ var Tabs = require('uxcore-tabs');
 var TabPane = Tabs.TabPane;
 
 var callback = function(key){
-
 }
 
 React.render(
@@ -16,15 +32,12 @@ React.render(
       <TabPane tab='tab 3' key="3">third</TabPane>
     </Tabs>
   ),
-  document.getElementById('t2'));
+  document.getElementById('demo'));
 ```
 
-## development
-```shell
-npm install
-npm run dev
-// nav to http://localhost:9090/example/
-```
+## demo
+
+见 http://uxcore.github.io/uxcore/components/tabs/
 
 ## API
 ### Tabs
@@ -34,8 +47,8 @@ npm run dev
 |defaultActiveKey|	String|	first active tabPanel's key|	initial active tabPanel's key if activeKey is absent|
 |onChange|	Function|(key)		|called when tabPanel is changed|
 |onTabClick|	Function|(key)		|called when tab is clicked|
-|size|string|normal|set tab size:mini, normal, large|
-|tabStyle|string|underline|set tab style: underline, line, topline, brick|
+|size|string|normal|set tab size: `mini`, `normal`, `large`|
+|tabStyle|string|underline|set tab style: `underline`, `line`, `topline`, `brick`|
 
 ### TabPane
 |name|type|default|description|
