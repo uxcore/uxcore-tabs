@@ -29,8 +29,7 @@
     "classnames": "^2.1.2",
     "object-assign": "^2.0.0",
     "rc-tabs": "~5.3.3",
-    "react": "^0.13.3",
-    "uxcore-kuma": "~1.0.7"
+    "uxcore-kuma": "~1.1.0"
   },
   "devDependencies": {
     "babel-core": "^5.6.18",
@@ -43,6 +42,8 @@
     "gulp-just-replace": "~1.0.2",
     "gulp-less": "~3.0.3",
     "gulp-sourcemaps": "~1.5.2",
+    "react": "~0.14.0",
+    "react-dom": "~0.14.0",
     "webpack": "^1.10.5"
   }
 }

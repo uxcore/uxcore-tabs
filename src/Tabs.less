@@ -6,46 +6,15 @@
  * All rights reserved.
  */
 
-@import "../node_modules/uxcore-kuma/src/less/variables";
+@import "../node_modules/uxcore-kuma/src/variables";
 
 @tabClass: kuma-tabs;
 
-// @tab-easing-in-out: cubic-bezier(0.35, 0, 0.25, 1);
-//
-// @tab-effect-duration: .3s;
-//
-// @import "./tabs/common";
-// @import "./tabs/anim";
-// @import "./tabs/left";
-// @import "./tabs/right";
-// @import "./tabs/bottom";
-// @import "./tabs/top";
-
-//====++++ Tab Items
-//=====***** 基于 variables -> tab.less
-//++++===== Nw Style Tabs
-
-@tab-height: 30px;
-@tab-padding: 10px;
-@tab-title-padding: 20px;
-@tab-item-height: 29px;
-@tab-item-fix-height: 27px;
-@tab-font-size: 14px;
-@tab-title-font-size: 16px;
-
-@tab-height-lg: 40px;
-@tab-padding-lg: 20px;
-@tab-title-padding-lg: 30px;
-@tab-item-height-lg: 39px;
-@tab-item-fix-height-lg: 37px;
-@tab-font-size-lg: 16px;
-@tab-title-font-size-lg: 18px;
-
-@tab-font-size-sm: 12px;
-@tab-title-font-size-sm: 14px;
-
 .@{tabClass} {
     outline: 0 none;
+    * {
+        box-sizing: content-box;
+    }
 
     .@{tabClass}-nav-container {
         height: @tab-height;
@@ -56,40 +25,40 @@
     .@{tabClass}-nav {
         overflow: hidden;
         zoom: 1;
+    }
 
-        .@{tabClass}-tab {
-            float: left;
+    .@{tabClass}-tab {
+        float: left;
+        height: @tab-item-height;
+        border: solid 1px transparent;
+        cursor: pointer;
+
+        a {
+            display: inline-block;
             height: @tab-item-height;
-            border: solid 1px transparent;
-            cursor: pointer;
+            padding: 0 @tab-padding;
+            line-height: @tab-item-height;
+            text-align: center;
+            color: @tab-color;
+            text-decoration: none;
 
+            &:hover {
+                color: @tab-hover-color;
+            }
+        }
+
+        &.@{tabClass}-tab-active {
             a {
-                display: inline-block;
-                height: @tab-item-height;
-                padding: 0 @tab-padding;
-                line-height: @tab-item-height;
-                text-align: center;
-                color: @tab-color;
-                text-decoration: none;
-
-                &:hover {
-                    color: @tab-hover-color;
-                }
+                margin-bottom: -1px;
+                border-bottom: solid 1px @tab-active-bg-color;
+                background-color: @tab-active-bg-color;
+                color: @tab-hover-color;
             }
+        }
 
-            &.@{tabClass}-tab-active {
-                a {
-                    margin-bottom: -1px;
-                    border-bottom: solid 1px @tab-active-bg-color;
-                    background-color: @tab-active-bg-color;
-                    color: @tab-hover-color;
-                }
-            }
-
-            &.@{tabClass}-tab-disabled {
-                a {
-                    color: #aaa;
-                }
+        &.@{tabClass}-tab-disabled {
+            a {
+                color: @tab-disabled-color;
             }
         }
     }
@@ -140,7 +109,7 @@
     }
 
     &.@{tabClass}-lg {
-        
+
         .@{tabClass}-nav-container {
             height: @tab-height-lg;
             font-size: @tab-font-size-lg;

@@ -5,16 +5,11 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
-/*@pager-bg:                             @pagination-bg;
-@pager-border:                         @pagination-border;
-@pager-border-radius:                  15px;
-
-@pager-hover-bg:                       @pagination-hover-bg;
-
-@pager-active-bg:                      @pagination-active-bg;
-@pager-active-color:                   @pagination-active-color;*/
 .kuma-tabs {
   outline: 0 none;
+}
+.kuma-tabs * {
+  box-sizing: content-box;
 }
 .kuma-tabs .kuma-tabs-nav-container {
   height: 30px;
@@ -25,13 +20,13 @@
   overflow: hidden;
   zoom: 1;
 }
-.kuma-tabs .kuma-tabs-nav .kuma-tabs-tab {
+.kuma-tabs .kuma-tabs-tab {
   float: left;
   height: 29px;
   border: solid 1px transparent;
   cursor: pointer;
 }
-.kuma-tabs .kuma-tabs-nav .kuma-tabs-tab a {
+.kuma-tabs .kuma-tabs-tab a {
   display: inline-block;
   height: 29px;
   padding: 0 10px;
@@ -40,17 +35,17 @@
   color: #666666;
   text-decoration: none;
 }
-.kuma-tabs .kuma-tabs-nav .kuma-tabs-tab a:hover {
+.kuma-tabs .kuma-tabs-tab a:hover {
   color: #ff9900;
 }
-.kuma-tabs .kuma-tabs-nav .kuma-tabs-tab.kuma-tabs-tab-active a {
+.kuma-tabs .kuma-tabs-tab.kuma-tabs-tab-active a {
   margin-bottom: -1px;
   border-bottom: solid 1px #ffffff;
   background-color: #ffffff;
   color: #ff9900;
 }
-.kuma-tabs .kuma-tabs-nav .kuma-tabs-tab.kuma-tabs-tab-disabled a {
-  color: #aaa;
+.kuma-tabs .kuma-tabs-tab.kuma-tabs-tab-disabled a {
+  color: #aaaaaa;
 }
 .kuma-tabs.kuma-tabs-brick .kuma-tabs-tab,
 .kuma-tabs.kuma-tabs-topline .kuma-tabs-tab {

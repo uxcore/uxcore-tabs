@@ -1,6 +1,9 @@
 # History
 ----
 
+## 0.2.1
+'changed' upgrade to react@0.14
+
 ## 0.2.0 / 2015-09-24
 
 `new` change to kuma style
