@@ -1,5 +1,7 @@
 # History
 ----
+## 0.2.2
+'changed' change css prefix
 
 ## 0.2.1
 'changed' upgrade to react@0.14

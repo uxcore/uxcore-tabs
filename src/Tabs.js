@@ -2,7 +2,7 @@ import React from 'react';
 import RcTabs from 'rc-tabs';
 import assign from 'object-assign';
 
-const prefixCls = 'kuma-tabs';
+const prefixCls = 'kuma-tab';
 const STYLESUFFIX = [
 	'underline',
 	'line',
