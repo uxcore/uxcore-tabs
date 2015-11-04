@@ -133,9 +133,13 @@
         }
 
         &.@{tabClass}-underline {
+            .@{tabClass}-nav-container {
+                border-bottom-width: @tab-lg-underline-bottom-border-width;
+            }
             .@{tabClass}-tab-active {
                 a {
                     height: @tab-item-fix-height-lg;
+                    border-bottom-width: @tab-lg-underline-bottom-border-width;
                 }
             }
         }
