@@ -48,6 +48,7 @@
                 border-bottom: solid 1px @tab-active-bg-color;
                 background-color: @tab-active-bg-color;
                 color: @tab-hover-color;
+                font-weight: @tab-font-weight-active;
             }
         }
 
@@ -117,13 +118,18 @@
 
                 a {
                     height: @tab-item-height-lg;
-                    padding: 0 @tab-padding-lg;
                     line-height: @tab-item-height-lg;
                 }
             }
         }
 
         &.@{tabClass}-topline {
+            .@{tabClass}-tab {
+                margin-right: @tab-margin-topline-lg;
+                a {
+                    padding: 0 @tab-padding-topline-lg;
+                }
+            }
             .@{tabClass}-tab-active {
                 a {
                     height: @tab-item-height-lg;
@@ -136,10 +142,34 @@
             .@{tabClass}-nav-container {
                 border-bottom-width: @tab-lg-underline-bottom-border-width;
             }
+            .@{tabClass}-tab {
+                margin-right: @tab-margin-underline-lg;
+                a {
+                    padding: 0 @tab-padding-underline-lg;
+                }
+            }
             .@{tabClass}-tab-active {
                 a {
                     height: @tab-item-fix-height-lg;
                     border-bottom-width: @tab-lg-underline-bottom-border-width;
+                }
+            }
+        }
+
+        &.@{tabClass}-line {
+            .@{tabClass}-tab {
+                margin-right: @tab-margin-line-lg;
+                a {
+                    padding: 0 @tab-padding-line-lg;
+                }
+            }
+        }
+
+        &.@{tabClass}-brick {
+            .@{tabClass}-tab {
+                margin-right: @tab-margin-brick-lg;
+                a {
+                    padding: 0 @tab-padding-brick-lg;
                 }
             }
         }
