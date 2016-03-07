@@ -28,7 +28,7 @@
         border: solid 1px transparent;
         cursor: pointer;
 
-        a {
+        .@{tabClass}-tab-inner {
             display: inline-block;
             height: @tab-item-height;
             padding: 0 @tab-padding;
@@ -42,18 +42,42 @@
             }
         }
 
+        > a {
+            display: inline-block;
+            height: @tab-item-height;
+            padding: 0 @tab-padding;
+            line-height: @tab-item-height;
+            text-align: center;
+            color: @tab-color;
+            text-decoration: none;
+
+            &:hover {
+                color: @tab-hover-color;
+            } 
+        }
+
         &.@{tabClass}-tab-active {
-            a {
+            .@{tabClass}-tab-inner {
                 margin-bottom: -1px;
                 border-bottom: solid 1px @tab-active-bg-color;
                 background-color: @tab-active-bg-color;
                 color: @tab-hover-color;
                 font-weight: @tab-font-weight-active;
             }
+            > a {
+                margin-bottom: -1px;
+                border-bottom: solid 1px @tab-active-bg-color;
+                background-color: @tab-active-bg-color;
+                color: @tab-hover-color;
+                font-weight: @tab-font-weight-active; 
+            }
         }
 
         &.@{tabClass}-tab-disabled {
-            a {
+            .@{tabClass}-tab-inner {
+                color: @tab-disabled-color;
+            }
+            > a {
                 color: @tab-disabled-color;
             }
         }
@@ -82,18 +106,29 @@
     &.@{tabClass}-topline {
         .@{tabClass}-tab-active {
 
-            a {
+            .@{tabClass}-tab-inner {
                 height: @tab-item-height;
                 border-top: solid 2px @tab-hover-color;
                 margin-top: -1px;
                 line-height: @tab-item-fix-height;
+            }
+
+            > a {
+                height: @tab-item-height;
+                border-top: solid 2px @tab-hover-color;
+                margin-top: -1px;
+                line-height: @tab-item-fix-height; 
             }
         }
     }
 
     &.@{tabClass}-underline {
         .@{tabClass}-tab-active {
-            a {
+            .@{tabClass}-tab-inner {
+                height: @tab-item-fix-height;
+                border-bottom: solid 2px @tab-hover-color;
+            }
+            > a {
                 height: @tab-item-fix-height;
                 border-bottom: solid 2px @tab-hover-color;
             }
@@ -116,7 +151,11 @@
             .@{tabClass}-tab {
                 height: @tab-item-height-lg;
 
-                a {
+                .@{tabClass}-tab-inner {
+                    height: @tab-item-height-lg;
+                    line-height: @tab-item-height-lg;
+                }
+                > a {
                     height: @tab-item-height-lg;
                     line-height: @tab-item-height-lg;
                 }
@@ -126,12 +165,19 @@
         &.@{tabClass}-topline {
             .@{tabClass}-tab {
                 margin-right: @tab-margin-topline-lg;
-                a {
+                .@{tabClass}-tab-inner {
+                    padding: 0 @tab-padding-topline-lg;
+                }
+                > a {
                     padding: 0 @tab-padding-topline-lg;
                 }
             }
             .@{tabClass}-tab-active {
-                a {
+                .@{tabClass}-tab-inner {
+                    height: @tab-item-height-lg;
+                    line-height: @tab-item-fix-height-lg;
+                }
+                > a {
                     height: @tab-item-height-lg;
                     line-height: @tab-item-fix-height-lg;
                 }
@@ -144,12 +190,19 @@
             }
             .@{tabClass}-tab {
                 margin-right: @tab-margin-underline-lg;
-                a {
+                .@{tabClass}-tab-inner {
+                    padding: 0 @tab-padding-underline-lg;
+                }
+                > a {
                     padding: 0 @tab-padding-underline-lg;
                 }
             }
             .@{tabClass}-tab-active {
-                a {
+                .@{tabClass}-tab-inner {
+                    height: @tab-item-fix-height-lg;
+                    border-bottom-width: @tab-lg-underline-bottom-border-width;
+                }
+                > a {
                     height: @tab-item-fix-height-lg;
                     border-bottom-width: @tab-lg-underline-bottom-border-width;
                 }
@@ -159,7 +212,10 @@
         &.@{tabClass}-line {
             .@{tabClass}-tab {
                 margin-right: @tab-margin-line-lg;
-                a {
+                .@{tabClass}-tab-inner {
+                    padding: 0 @tab-padding-line-lg;
+                }
+                > a {
                     padding: 0 @tab-padding-line-lg;
                 }
             }
@@ -168,7 +224,10 @@
         &.@{tabClass}-brick {
             .@{tabClass}-tab {
                 margin-right: @tab-margin-brick-lg;
-                a {
+                .@{tabClass}-tab-inner {
+                    padding: 0 @tab-padding-brick-lg;
+                }
+                > a {
                     padding: 0 @tab-padding-brick-lg;
                 }
             }

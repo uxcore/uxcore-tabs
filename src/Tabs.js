@@ -1,4 +1,5 @@
 import React from 'react';
+import ReactDOM from 'react-dom';
 import RcTabs from 'rc-tabs';
 import assign from 'object-assign';
 
