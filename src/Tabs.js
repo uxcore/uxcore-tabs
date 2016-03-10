@@ -4,27 +4,19 @@ import RcTabs from 'rc-tabs';
 import assign from 'object-assign';
 
 const prefixCls = 'kuma-tab';
-const STYLESUFFIX = [
-	'underline',
-	'line',
-	'topline',
-	'brick'
-];
-const SIZESUFFIX = {
-	normal: '',
-	mini: 'sm',
-	large: 'lg'
+const TYPESUFFIX = {
+	large: 'lg',
+    small: 'sm',
+    filter: 'filter',
+    brick: 'brick'
 };
 
 class Tabs extends RcTabs {
 	render(){
 		let props = this.props;
 		let cls = [];
-		if (SIZESUFFIX[props.size]) {
-			cls.push([prefixCls, SIZESUFFIX[props.size]].join('-'));
-		}
-		if (STYLESUFFIX.indexOf(props.tabStyle) !== -1) {
-			cls.push([prefixCls, props.tabStyle].join('-'));
+		if (TYPESUFFIX[props.type]) {
+			cls.push([prefixCls, TYPESUFFIX[props.type]].join('-'));
 		}
 		cls = cls.join(' ');
 		return <RcTabs {...props} className={cls} />;
@@ -33,8 +25,7 @@ class Tabs extends RcTabs {
 Tabs.displayName = 'uxcore-tabs';
 Tabs.defaultProps = assign(RcTabs.defaultProps, {
 	prefixCls: prefixCls,
-	tabStyle: 'underline',
-	size: 'normal'
+	type: 'large'
 });
 Tabs.TabPane = RcTabs.TabPane;
 

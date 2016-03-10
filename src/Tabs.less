@@ -5,238 +5,156 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
-
-@tabClass: kuma-tab;
-
-.@{tabClass} {
-    outline: 0 none;
-
-    .@{tabClass}-nav-container {
-        height: @tab-height;
-        border-bottom: solid 1px @tab-border-color;
-        font-size: @tab-font-size;
-    }
-
-    .@{tabClass}-nav {
-        overflow: hidden;
-        zoom: 1;
-    }
-
-    .@{tabClass}-tab {
-        float: left;
-        height: @tab-item-height;
-        border: solid 1px transparent;
-        cursor: pointer;
-
-        .@{tabClass}-tab-inner {
+.kuma-tab {
+    border: 1px solid @basic-600;
+    &-tabs-bar {
+        .kuma-tab-tab {
             display: inline-block;
-            height: @tab-item-height;
-            padding: 0 @tab-padding;
-            line-height: @tab-item-height;
-            text-align: center;
-            color: @tab-color;
-            text-decoration: none;
-
-            &:hover {
-                color: @tab-hover-color;
+            vertical-align: top;
+            cursor: pointer;
+            color: @gray;
+            &-active {
+                font-weight: 700;
+                color: @gray-dark;
             }
-        }
-
-        > a {
-            display: inline-block;
-            height: @tab-item-height;
-            padding: 0 @tab-padding;
-            line-height: @tab-item-height;
-            text-align: center;
-            color: @tab-color;
-            text-decoration: none;
-
-            &:hover {
-                color: @tab-hover-color;
-            } 
-        }
-
-        &.@{tabClass}-tab-active {
-            .@{tabClass}-tab-inner {
-                margin-bottom: -1px;
-                border-bottom: solid 1px @tab-active-bg-color;
-                background-color: @tab-active-bg-color;
-                color: @tab-hover-color;
-                font-weight: @tab-font-weight-active;
-            }
-            > a {
-                margin-bottom: -1px;
-                border-bottom: solid 1px @tab-active-bg-color;
-                background-color: @tab-active-bg-color;
-                color: @tab-hover-color;
-                font-weight: @tab-font-weight-active; 
-            }
-        }
-
-        &.@{tabClass}-tab-disabled {
-            .@{tabClass}-tab-inner {
-                color: @tab-disabled-color;
-            }
-            > a {
-                color: @tab-disabled-color;
+            &-inner {
+                display: block;
             }
         }
     }
-
-    &.@{tabClass}-brick,
-    &.@{tabClass}-topline {
-        .@{tabClass}-tab {
-            border-color: @tab-border-color;
-            background-color: @tab-bg-color;
-            border-left-width: 0;
-
-            &:first-child {
-                border-left-width: 1px;
+    &-content {
+        .kuma-tab-tabpane {
+            &-hidden {
+                display: none;
             }
         }
     }
-
-    &.@{tabClass}-line {
-        .@{tabClass}-tab-active {
-            border-color: @tab-border-color;
-            border-width: 1px;
-        }
-    }
-
-    &.@{tabClass}-topline {
-        .@{tabClass}-tab-active {
-
-            .@{tabClass}-tab-inner {
-                height: @tab-item-height;
-                border-top: solid 2px @tab-hover-color;
-                margin-top: -1px;
-                line-height: @tab-item-fix-height;
+    
+    // large
+    &.kuma-tab-lg {
+        @__tab_lg_height: 55px;
+        > .kuma-tab-tabs-bar {
+            background-color: @basic-300;
+            .kuma-tab-nav-container {
+                height: @__tab_lg_height;
+                border-bottom: 1px solid @basic-600;
             }
-
-            > a {
-                height: @tab-item-height;
-                border-top: solid 2px @tab-hover-color;
-                margin-top: -1px;
-                line-height: @tab-item-fix-height; 
-            }
-        }
-    }
-
-    &.@{tabClass}-underline {
-        .@{tabClass}-tab-active {
-            .@{tabClass}-tab-inner {
-                height: @tab-item-fix-height;
-                border-bottom: solid 2px @tab-hover-color;
-            }
-            > a {
-                height: @tab-item-fix-height;
-                border-bottom: solid 2px @tab-hover-color;
-            }
-        }
-    }
-
-    &.@{tabClass}-sm {
-        font-size: @tab-font-size-sm;
-    }
-
-    &.@{tabClass}-lg {
-
-        .@{tabClass}-nav-container {
-            height: @tab-height-lg;
-            font-size: @tab-font-size-lg;
-        }
-
-        .@{tabClass}-nav {
-
-            .@{tabClass}-tab {
-                height: @tab-item-height-lg;
-
-                .@{tabClass}-tab-inner {
-                    height: @tab-item-height-lg;
-                    line-height: @tab-item-height-lg;
+            .kuma-tab-tab {
+                height: @__tab_lg_height;
+                line-height: @__tab_lg_height;
+                font-size: 16px;
+                &-inner {
+                    padding: 0 45px;
                 }
-                > a {
-                    height: @tab-item-height-lg;
-                    line-height: @tab-item-height-lg;
-                }
-            }
-        }
-
-        &.@{tabClass}-topline {
-            .@{tabClass}-tab {
-                margin-right: @tab-margin-topline-lg;
-                .@{tabClass}-tab-inner {
-                    padding: 0 @tab-padding-topline-lg;
-                }
-                > a {
-                    padding: 0 @tab-padding-topline-lg;
-                }
-            }
-            .@{tabClass}-tab-active {
-                .@{tabClass}-tab-inner {
-                    height: @tab-item-height-lg;
-                    line-height: @tab-item-fix-height-lg;
-                }
-                > a {
-                    height: @tab-item-height-lg;
-                    line-height: @tab-item-fix-height-lg;
-                }
-            }
-        }
-
-        &.@{tabClass}-underline {
-            .@{tabClass}-nav-container {
-                border-bottom-width: @tab-lg-underline-bottom-border-width;
-            }
-            .@{tabClass}-tab {
-                margin-right: @tab-margin-underline-lg;
-                .@{tabClass}-tab-inner {
-                    padding: 0 @tab-padding-underline-lg;
-                }
-                > a {
-                    padding: 0 @tab-padding-underline-lg;
-                }
-            }
-            .@{tabClass}-tab-active {
-                .@{tabClass}-tab-inner {
-                    height: @tab-item-fix-height-lg;
-                    border-bottom-width: @tab-lg-underline-bottom-border-width;
-                }
-                > a {
-                    height: @tab-item-fix-height-lg;
-                    border-bottom-width: @tab-lg-underline-bottom-border-width;
-                }
-            }
-        }
-
-        &.@{tabClass}-line {
-            .@{tabClass}-tab {
-                margin-right: @tab-margin-line-lg;
-                .@{tabClass}-tab-inner {
-                    padding: 0 @tab-padding-line-lg;
-                }
-                > a {
-                    padding: 0 @tab-padding-line-lg;
-                }
-            }
-        }
-
-        &.@{tabClass}-brick {
-            .@{tabClass}-tab {
-                margin-right: @tab-margin-brick-lg;
-                .@{tabClass}-tab-inner {
-                    padding: 0 @tab-padding-brick-lg;
-                }
-                > a {
-                    padding: 0 @tab-padding-brick-lg;
+                &-active {
+                    position: relative;
+                    background-color: @basic-100;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: -1px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: @brand-primary;
+                    }
+                    .kuma-tab-tab-inner {
+                        height: @__tab_lg_height;
+                        background-color: @basic-100;
+                        border-width: 0 1px;
+                        border-color: transparent @basic-600;
+                        border-style: solid;
+                    }
                 }
             }
         }
     }
-
-    .@{tabClass}-content {
-        .@{tabClass}-tabpane-hidden {
-            display: none;
+    // small
+    &.kuma-tab-sm {
+        @__tab_sm_height: 40px;
+        > .kuma-tab-tabs-bar {
+            background-color: @basic-300;
+            .kuma-tab-nav-container {
+                height: @__tab_sm_height;
+                border-bottom: 1px solid @basic-600;
+            }
+            .kuma-tab-tab {
+                height: @__tab_sm_height;
+                line-height: @__tab_sm_height;
+                font-size: 14px;
+                &-inner {
+                    padding: 0 45px;
+                }
+                &-active {
+                    position: relative;
+                    background-color: @basic-100;
+                    &:before {
+                        content: '';
+                        position: absolute;
+                        left: 0;
+                        top: -1px;
+                        width: 100%;
+                        height: 3px;
+                        background-color: @brand-primary;
+                    }
+                    .kuma-tab-tab-inner {
+                        height: @__tab_sm_height;
+                        background-color: @basic-100;
+                        border-width: 0 1px;
+                        border-color: transparent @basic-600;
+                        border-style: solid;
+                    }
+                }
+            }
+        }
+    }
+    // filter
+    &.kuma-tab-filter {
+        @__tab_filter_height: 30px;
+        > .kuma-tab-tabs-bar {
+            .kuma-tab-nav-container {
+                padding: 20px 30px;
+            }
+            .kuma-tab-tab {
+                height: @__tab_filter_height;
+                line-height: @__tab_filter_height;
+                font-size: 14px;
+                &-inner {
+                    padding: 0 25px;
+                }
+                &-active {
+                    background: lighten(@brand-primary, 42%);
+                    border-radius: 2px;
+                    color: @brand-primary;
+                    font-weight: 400;
+                }
+            }
+        }
+    }
+    // brick
+    &.kuma-tab-brick {
+        @__tab_brick_height: 30px;
+        > .kuma-tab-tabs-bar {
+            .kuma-tab-nav-container {
+                padding: 20px 30px;
+            }
+            .kuma-tab-nav {
+                border-left: 1px solid @basic-600;
+            }
+            .kuma-tab-tab {
+                height: @__tab_brick_height;
+                line-height: @__tab_brick_height - 2;
+                border: 1px solid @basic-600;
+                border-left: 0 none;
+                font-size: 14px;
+                &-inner {
+                    padding: 0 25px;
+                }
+                &-active {
+                    color: @brand-primary;
+                    font-weight: 400;
+                }
+            }
         }
     }
 }
