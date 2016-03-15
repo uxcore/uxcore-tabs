@@ -11,7 +11,13 @@ const TYPESUFFIX = {
     brick: 'brick'
 };
 
+
 class Tabs extends RcTabs {
+
+	aaa() {
+		
+	}
+
 	render(){
 		let props = this.props;
 		let cls = [];
@@ -22,6 +28,8 @@ class Tabs extends RcTabs {
 		return <RcTabs {...props} className={cls} />;
 	}
 }
+
+
 Tabs.displayName = 'uxcore-tabs';
 Tabs.defaultProps = assign(RcTabs.defaultProps, {
 	prefixCls: prefixCls,
