@@ -35,7 +35,7 @@
     
     // large
     &.kuma-tab-lg {
-        @__tab_lg_height: 55px;
+        @__tab_lg_height: 50px;
         > .kuma-tab-tabs-bar {
             background-color: @basic-300;
             .kuma-tab-nav-container {
@@ -43,6 +43,7 @@
                 border-bottom: 1px solid @basic-600;
             }
             .kuma-tab-tab {
+                margin-left: -1px;
                 height: @__tab_lg_height;
                 line-height: @__tab_lg_height;
                 font-size: 16px;
@@ -82,6 +83,7 @@
                 border-bottom: 1px solid @basic-600;
             }
             .kuma-tab-tab {
+                margin-left: -1px;
                 height: @__tab_sm_height;
                 line-height: @__tab_sm_height;
                 font-size: 14px;
