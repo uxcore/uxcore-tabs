@@ -1,5 +1,10 @@
 # History
 ----
+
+## 0.2.4
+
+`changed` update scaffold
+
 ## 0.2.2
 'changed' change css prefix
 
