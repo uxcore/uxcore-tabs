@@ -1,6 +1,9 @@
 # History
 ----
 
+## 0.2.5
+`changed` reset rc-tabs to ~5.3.3
+
 ## 0.2.4
 
 `changed` update scaffold
