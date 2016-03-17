@@ -28,7 +28,7 @@
  "dependencies": {
   "classnames": "^2.1.2",
   "object-assign": "^4.0.0",
-  "rc-tabs": "~5.5.0"
+  "rc-tabs": "~5.8.0"
  },
  "devDependencies": {
   "babel-core": "~6.4.0",

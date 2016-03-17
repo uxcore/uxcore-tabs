@@ -6,8 +6,12 @@
  * All rights reserved.
  */
 .kuma-tab {
+    // 嵌套用
+    .kuma-tab {
+        border: none;
+    }
     border: 1px solid @basic-600;
-    &-tabs-bar {
+    &-bar {
         .kuma-tab-tab {
             display: inline-block;
             vertical-align: top;
@@ -36,7 +40,7 @@
     // large
     &.kuma-tab-lg {
         @__tab_lg_height: 49px;
-        > .kuma-tab-tabs-bar {
+        > .kuma-tab-bar {
             background-color: @basic-300;
             .kuma-tab-nav-container {
                 height: @__tab_lg_height;
@@ -76,7 +80,7 @@
     // small
     &.kuma-tab-sm {
         @__tab_sm_height: 39px;
-        > .kuma-tab-tabs-bar {
+        > .kuma-tab-bar {
             background-color: @basic-300;
             .kuma-tab-nav-container {
                 height: @__tab_sm_height;
@@ -116,7 +120,7 @@
     // filter
     &.kuma-tab-filter {
         @__tab_filter_height: 30px;
-        > .kuma-tab-tabs-bar {
+        > .kuma-tab-bar {
             .kuma-tab-nav-container {
                 padding: 20px 30px;
             }
@@ -139,7 +143,7 @@
     // brick
     &.kuma-tab-brick {
         @__tab_brick_height: 30px;
-        > .kuma-tab-tabs-bar {
+        > .kuma-tab-bar {
             .kuma-tab-nav-container {
                 padding: 20px 30px;
             }
