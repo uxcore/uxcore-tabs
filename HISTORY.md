@@ -1,5 +1,9 @@
 # History
 ----
+## 0.4.0
+`update` update rc-tabs to 5.8
+`changed` some class change
+
 ## 0.3.0
 `update` upgrade to new style
 
