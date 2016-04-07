@@ -10,16 +10,15 @@
     .kuma-tab {
         border: none;
     }
-    border: 1px solid @basic-600;
+    border: 1px solid @border-color;
     &-bar {
         .kuma-tab-tab {
             display: inline-block;
             vertical-align: top;
             cursor: pointer;
-            color: @gray;
+            color: @text-secondary-color;
             &-active {
-                // font-weight: 700;
-                color: @gray-dark;
+                color: @text-primary-color;
             }
             &-inner {
                 display: block;
@@ -44,7 +43,7 @@
             background-color: @basic-300;
             .kuma-tab-nav-container {
                 height: @__tab_lg_height;
-                border-bottom: 1px solid @basic-600;
+                border-bottom: 1px solid @border-color;
             }
             .kuma-tab-tab {
                 margin-left: -1px;
@@ -70,7 +69,7 @@
                         height: @__tab_lg_height;
                         background-color: @basic-100;
                         border-width: 0 1px;
-                        border-color: transparent @basic-600;
+                        border-color: transparent @border-color;
                         border-style: solid;
                     }
                 }
@@ -84,7 +83,7 @@
             background-color: @basic-300;
             .kuma-tab-nav-container {
                 height: @__tab_sm_height;
-                border-bottom: 1px solid @basic-600;
+                border-bottom: 1px solid @border-color;
             }
             .kuma-tab-tab {
                 margin-left: -1px;
@@ -110,7 +109,7 @@
                         height: @__tab_sm_height;
                         background-color: @basic-100;
                         border-width: 0 1px;
-                        border-color: transparent @basic-600;
+                        border-color: transparent @border-color;
                         border-style: solid;
                     }
                 }
@@ -142,26 +141,25 @@
     }
     // brick
     &.kuma-tab-brick {
-        @__tab_brick_height: 30px;
+        @__tab_brick_height: 34px;
         > .kuma-tab-bar {
             .kuma-tab-nav-container {
                 padding: 20px 30px;
             }
             .kuma-tab-nav {
-                border-left: 1px solid @basic-600;
+                border-left: 1px solid @border-color;
             }
             .kuma-tab-tab {
                 height: @__tab_brick_height;
                 line-height: @__tab_brick_height - 2;
-                border: 1px solid @basic-600;
+                border: 1px solid @border-color;
                 border-left: 0 none;
                 font-size: 14px;
                 &-inner {
-                    padding: 0 25px;
+                    padding: 0 30px;
                 }
                 &-active {
-                    color: @brand-primary;
-                    // font-weight: 400;
+                    background-color: @basic-500;
                 }
             }
         }
