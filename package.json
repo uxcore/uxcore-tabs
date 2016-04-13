@@ -1,6 +1,6 @@
 {
  "name": "uxcore-tabs",
- "version": "0.4.1",
+ "version": "0.4.2",
  "description": "easy tab component based on react",
  "main": "build/index.js",
  "scripts": {
