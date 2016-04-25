@@ -4,7 +4,7 @@ const {BoolSetter, TextSetter, ChoiceSetter, JsonSetter, NumberSetter, ListSette
 
 module.exports = Bundle.createPrototype({
     title: "标签容器",
-    icon: require('../src/logo.svg'),
+    icon: require('./logo.svg'),
     category: "*",
     isInline: false,
     isContainer: true,
