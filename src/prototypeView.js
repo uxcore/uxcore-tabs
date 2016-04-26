@@ -43,7 +43,6 @@ class View extends React.Component {
             }
             return tab.actived || tab.key == this.props.activeKey;
         });
-        console.info(this.props.defaultActiveKey, this.props.tabs);
 
         if (activeIndex < 0) {
             activeIndex = defaultActiveIndex;
