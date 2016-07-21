@@ -1,6 +1,9 @@
 # History
 ----
 
+## 0.4.5
+`NEW` support prop className 
+
 ## 0.4.4
 `NEW` update rc-tabs to 5.9
 
