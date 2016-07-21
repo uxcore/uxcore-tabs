@@ -2,6 +2,7 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import RcTabs from 'rc-tabs';
 import assign from 'object-assign';
+import classnames from 'classnames';
 
 const prefixCls = 'kuma-tab';
 const TYPESUFFIX = {
@@ -14,18 +15,12 @@ const TYPESUFFIX = {
 
 class Tabs extends RcTabs {
 
-	aaa() {
-		
-	}
-
 	render(){
 		let props = this.props;
-		let cls = [];
-		if (TYPESUFFIX[props.type]) {
-			cls.push([prefixCls, TYPESUFFIX[props.type]].join('-'));
-		}
-		cls = cls.join(' ');
-		return <RcTabs {...props} className={cls} />;
+		return <RcTabs {...props} className={classnames({
+			[`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
+			[props.className]: !!props.className,
+		})} />;
 	}
 }
 

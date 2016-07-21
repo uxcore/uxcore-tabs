@@ -21,7 +21,7 @@ export default class Demo extends React.Component {
         return (
             <div>
                 <h2>大 tab,优先级最高（推荐样式）</h2>
-                <Tabs defaultActiveKey="2" onChange={callback}>
+                <Tabs defaultActiveKey="2" onChange={callback} className="test">
                   <TabPane tab="tab 1" key="1">选项卡一</TabPane>
                   <TabPane tab="tab 2" key="2">选项卡二</TabPane>
                   <TabPane tab="tab 3" key="3">选项卡三</TabPane>
