@@ -49,9 +49,23 @@ React.render(
 |onTabClick|	Function|(key)		|called when tab is clicked|
 |destroyInactiveTabPane| Boolean | false | whether destroy inactive tabpane when change tab|
 |type|string|large|`large` `small` `filter` `brick`|
+|animated|boolean|true|whether have animation effect when switch tab |
+|tabBarPosition|string|top|`top` `bottom` `left` `right` |
+|extraContent|ReactNode|null|the extra content on tab bar |
+
+
 
 ### TabPane
 |name|type|default|description|
 |----|----|-------|-----------|
 |key| Object | |corresponding to activeKey|
 |tab| String | |current tab's title corresponding to current tabPane|
+
+## Note
+
+If you want to support old browsers(which does not support flex/css-transition),
+please load the following script inside head to add no-flexbox/no-csstransition css classes
+
+```
+https://as.alipayobjects.com/g/component/modernizr/2.8.3/modernizr.min.js
+```
