@@ -3,6 +3,8 @@ import ReactDOM from 'react-dom';
 import RcTabs from 'rc-tabs';
 import assign from 'object-assign';
 import classnames from 'classnames';
+import TabContent from 'rc-tabs/lib/TabContent';
+import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
 const prefixCls = 'kuma-tab';
 const TYPESUFFIX = {
@@ -17,10 +19,20 @@ class Tabs extends RcTabs {
 
 	render(){
 		let props = this.props;
+		let { onTabClick, extraContent, animated} = props;
+		
 		return <RcTabs {...props} className={classnames({
 			[`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
 			[props.className]: !!props.className,
-		})} />;
+		})}
+		renderTabBar={() => (
+          <ScrollableInkTabBar
+            extraContent={extraContent}
+            onTabClick={onTabClick}
+          />
+        )}
+        renderTabContent={() => <TabContent animated={animated} />}
+		/>;
 	}
 }
 
@@ -28,7 +40,12 @@ class Tabs extends RcTabs {
 Tabs.displayName = 'uxcore-tabs';
 Tabs.defaultProps = assign(RcTabs.defaultProps, {
 	prefixCls: prefixCls,
-	type: 'large'
+	type: 'large',
+	extraContent: null,
+	animated: true,
+	onTabClick(){},
+	renderTabBar(){},
+	renderTabContent(){}
 });
 Tabs.TabPane = RcTabs.TabPane;
 
