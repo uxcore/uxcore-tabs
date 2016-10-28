@@ -49,9 +49,15 @@ React.render(
 |onTabClick|	Function|(key)		|called when tab is clicked|
 |destroyInactiveTabPane| Boolean | false | whether destroy inactive tabpane when change tab|
 |type|string|large|`large` `small` `filter` `brick`|
+|animated|boolean|true|whether have animation effect when switch tab |
+|tabBarPosition|string|top|`top` `bottom` `left` `right` |
+|extraContent|ReactNode|null|the extra content on tab bar |
+
+
 
 ### TabPane
 |name|type|default|description|
 |----|----|-------|-----------|
 |key| Object | |corresponding to activeKey|
 |tab| String | |current tab's title corresponding to current tabPane|
+
