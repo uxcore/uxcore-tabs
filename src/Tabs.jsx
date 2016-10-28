@@ -14,7 +14,14 @@ const TYPESUFFIX = {
 };
 
 class Tabs extends RcTabs {
+  componentWillMount() {
+    const docEle = document.documentElement;
 
+    this.supportTransition = ['ms', 'moz', 'webkit', ''].some( function (prefix) {
+      const prop = prefix ? prefix + 'Transition' : 'transition';
+      return prop in docEle.style;
+    });
+  }
   render() {
     const props = this.props;
     const { onTabClick, extraContent, animated } = props;
@@ -25,6 +32,7 @@ class Tabs extends RcTabs {
         className={classnames({
           [`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
           [props.className]: !!props.className,
+          'no-csstransitions no-flexbox': !this.supportTransition,
         })}
         renderTabBar={() => (
           <ScrollableInkTabBar
@@ -50,5 +58,8 @@ Tabs.defaultProps = assign(RcTabs.defaultProps, {
   renderTabContent() { },
 });
 Tabs.TabPane = RcTabs.TabPane;
+
+
+
 
 export default Tabs;

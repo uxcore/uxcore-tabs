@@ -61,11 +61,3 @@ React.render(
 |key| Object | |corresponding to activeKey|
 |tab| String | |current tab's title corresponding to current tabPane|
 
-## Note
-
-If you want to support old browsers(which does not support flex/css-transition),
-please load the following script inside head to add no-flexbox/no-csstransition css classes
-
-```
-https://as.alipayobjects.com/g/component/modernizr/2.8.3/modernizr.min.js
-```
