@@ -77,9 +77,9 @@ export default class Demo extends React.Component {
         </Tabs>
 
         <h2>tab的位置</h2>
-        <Select 
-          value={this.state.tabBarPosition} 
-          style={{ width: 200 }} 
+        <Select
+          value={this.state.tabBarPosition}
+          style={{ width: 200 }}
           onChange={this.changeTabPosition.bind(this)}
         >
           <Option value="top">top</Option>
@@ -88,10 +88,10 @@ export default class Demo extends React.Component {
           <Option value="right">right</Option>
         </Select>
         <div style={{ width: 550, height: 300 }}>
-          <Tabs 
-            defaultActiveKey="2" 
-            onChange={callback} 
-            className="test" 
+          <Tabs
+            defaultActiveKey="2"
+            onChange={callback}
+            className="test"
             tabBarPosition={this.state.tabBarPosition}
           >
             <TabPane tab="tab 1" key="1">选项卡一</TabPane>

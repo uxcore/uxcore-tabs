@@ -17,8 +17,8 @@ class Tabs extends RcTabs {
   componentWillMount() {
     const docEle = document.documentElement;
 
-    this.supportTransition = ['ms', 'moz', 'webkit', ''].some( function (prefix) {
-      const prop = prefix ? prefix + 'Transition' : 'transition';
+    this.supportTransition = ['ms', 'moz', 'webkit', ''].some((prefix) => {
+      const prop = prefix ? `${prefix}Transition` : 'transition';
       return prop in docEle.style;
     });
   }
@@ -58,8 +58,6 @@ Tabs.defaultProps = assign(RcTabs.defaultProps, {
   renderTabContent() { },
 });
 Tabs.TabPane = RcTabs.TabPane;
-
-
 
 
 export default Tabs;

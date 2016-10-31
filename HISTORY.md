@@ -1,6 +1,9 @@
 # History
 ----
 
+## 0.5.0
+`NEW` support switch when the number of items is too large
+
 ## 0.4.5
 `NEW` support prop className 
 
