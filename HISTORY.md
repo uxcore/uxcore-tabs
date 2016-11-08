@@ -1,6 +1,9 @@
 # History
 ----
 
+## 0.5.1
+`CHANGED` set the height of the tabpane to 0 when inactive
+
 ## 0.5.0
 `NEW` support switch when the number of items is too large
 

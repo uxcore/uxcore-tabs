@@ -94,7 +94,10 @@ export default class Demo extends React.Component {
             className="test"
             tabBarPosition={this.state.tabBarPosition}
           >
-            <TabPane tab="tab 1" key="1">选项卡一</TabPane>
+            <TabPane tab="tab 1" key="1">
+              选项卡一
+              <br /><br /><br /><br /><br /><br /><br /><br /><br />
+            </TabPane>
             <TabPane tab="tab 2" key="2">选项卡二</TabPane>
             <TabPane tab="tab 3" key="3">选项卡三</TabPane>
             <TabPane tab="tab 4" key="4">选项卡四</TabPane>
