@@ -56,7 +56,7 @@
                 transform-origin: 0 0;
                 .kuma-tab-ink-bar {
                     position: absolute;
-                    top: -1px;
+                    top: 0px;
                     height: 3px;
                     background-color: @brand-primary;
                     z-index: 1;
@@ -144,6 +144,7 @@
         @__tab_lg_height: 49px;
         > .kuma-tab-bar {
             background-color: @basic-300;
+            height: @__tab_lg_height;
             .kuma-tab-nav-container {
                 height: @__tab_lg_height;
                 border-bottom: 0;
@@ -182,6 +183,7 @@
         @__tab_sm_height: 39px;
         > .kuma-tab-bar {
             background-color: @basic-300;
+            height: @__tab_sm_height;
             .kuma-tab-nav-container {
                 height: @__tab_sm_height;
                 border-bottom: 0;

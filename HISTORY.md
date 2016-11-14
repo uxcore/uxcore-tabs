@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.5.2
+
+`FIXED` fix border-bottom style bug ([#13](https://github.com/uxcore/uxcore-tabs/issues/13))
+
 ## 0.5.1
 `CHANGED` set the height of the tabpane to 0 when inactive
 
