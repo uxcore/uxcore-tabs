@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.5.3
+
+`FIXED` brick & filter style bug
+
 ## 0.5.2
 
 `FIXED` fix border-bottom style bug ([#13](https://github.com/uxcore/uxcore-tabs/issues/13))
