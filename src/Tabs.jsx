@@ -15,7 +15,7 @@ const TYPESUFFIX = {
 
 export default class Tabs extends RcTabs {
 
-  static propTypes = {
+  static propTypes = assign(RcTabs.propTypes, {
     activeKey: PropTypes.string,
     defaultActiveKey: PropTypes.string,
     onChange: PropTypes.func,
@@ -25,7 +25,7 @@ export default class Tabs extends RcTabs {
     animated: PropTypes.bool,
     tabBarPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
     extraContent: PropTypes.element,
-  };
+  });
 
   static defaultProps = assign(RcTabs.defaultProps, {
     prefixCls,
