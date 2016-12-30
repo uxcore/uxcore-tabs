@@ -13,6 +13,7 @@
     border: 1px solid @border-color;
     &-bar {
         .kuma-tab-tab {
+            transition: background-color 0.3s ease-out, color 0.3s ease-out;
             display: inline-block;
             vertical-align: top;
             cursor: pointer;
@@ -22,6 +23,9 @@
             }
             &-disabled {
                 color: @link-disabled-color;
+            }
+            &:hover {
+                color: @brand-primary;
             }
         }
     }
@@ -296,6 +300,8 @@
         -ms-flex-direction: row;
         flex-direction: row;
         .kuma-tab-tabpane {
+            transition: opacity 0.3s ease-out;
+            opacity: 1;
             width: 100%;
             display: block;
         }

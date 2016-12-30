@@ -13,14 +13,18 @@ const TYPESUFFIX = {
   brick: 'brick',
 };
 
-class Tabs extends RcTabs {
+class Tabs extends React.Component {
   componentWillMount() {
-    const docEle = document.documentElement;
+    if (document) {
+      const docEle = document.documentElement;
 
-    this.supportTransition = ['ms', 'moz', 'webkit', ''].some((prefix) => {
-      const prop = prefix ? `${prefix}Transition` : 'transition';
-      return prop in docEle.style;
-    });
+      this.supportTransition = ['ms', 'moz', 'webkit', ''].some((prefix) => {
+        const prop = prefix ? `${prefix}Transition` : 'transition';
+        return prop in docEle.style;
+      });
+    } else {
+      this.supportTransition = [];
+    }
   }
   render() {
     const props = this.props;
@@ -32,7 +36,7 @@ class Tabs extends RcTabs {
         className={classnames({
           [`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
           [props.className]: !!props.className,
-          'no-csstransitions no-flexbox': !this.supportTransition,
+          'no-csstransitions no-flexbox': this.supportTransition.length === 0,
         })}
         renderTabBar={() => (
           <ScrollableInkTabBar
