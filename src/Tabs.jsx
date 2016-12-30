@@ -1,7 +1,7 @@
-import React from 'react';
-import RcTabs from 'rc-tabs';
-import assign from 'object-assign';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import assign from 'object-assign';
+import RcTabs from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
@@ -13,7 +13,10 @@ const TYPESUFFIX = {
   brick: 'brick',
 };
 
-class Tabs extends React.Component {
+
+class Tabs extends RcTabs {
+
+
   componentWillMount() {
     if (document) {
       const docEle = document.documentElement;
@@ -26,10 +29,10 @@ class Tabs extends React.Component {
       this.supportTransition = [];
     }
   }
+
   render() {
     const props = this.props;
     const { onTabClick, extraContent, animated } = props;
-
     return (
       <RcTabs
         {...props}
@@ -50,18 +53,26 @@ class Tabs extends React.Component {
   }
 }
 
+Tabs.propTypes = assign({}, RcTabs.propTypes, {
+  activeKey: PropTypes.string,
+  defaultActiveKey: PropTypes.string,
+  onChange: PropTypes.func,
+  onTabClick: PropTypes.func,
+  destroyInactiveTabPane: PropTypes.bool,
+  type: PropTypes.oneOf(['large', 'small', 'filter', 'brick']),
+  animated: PropTypes.bool,
+  tabBarPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
+  extraContent: PropTypes.element,
+});
 
-Tabs.displayName = 'uxcore-tabs';
-Tabs.defaultProps = assign(RcTabs.defaultProps, {
+Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
   prefixCls,
   type: 'large',
-  extraContent: null,
   animated: true,
-  onTabClick() { },
-  renderTabBar() { },
-  renderTabContent() { },
+  onTabClick: () => {},
 });
-Tabs.TabPane = RcTabs.TabPane;
 
+Tabs.displayName = 'uxcore-tabs';
+Tabs.TabPane = RcTabs.TabPane;
 
 export default Tabs;

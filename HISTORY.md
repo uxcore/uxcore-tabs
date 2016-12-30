@@ -1,6 +1,11 @@
 # History
 ----
 
+## 0.5.4
+
+* `NEW` add unit tests
+* `NEW` improved hover & enter animation
+
 ## 0.5.3
 
 `FIXED` brick & filter style bug
