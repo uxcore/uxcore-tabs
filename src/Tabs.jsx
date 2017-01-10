@@ -15,8 +15,6 @@ const TYPESUFFIX = {
 
 
 class Tabs extends RcTabs {
-
-
   componentWillMount() {
     if (document) {
       const docEle = document.documentElement;
