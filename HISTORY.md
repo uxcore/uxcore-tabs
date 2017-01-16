@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.5.5
+
+* `FIXED` fix hover style bug when tab is disabled
+
 ## 0.5.4
 
 * `NEW` add unit tests

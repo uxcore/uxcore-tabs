@@ -21,11 +21,14 @@
             &-active {
                 color: @text-primary-color;
             }
-            &-disabled {
-                color: @link-disabled-color;
-            }
             &:hover {
                 color: @brand-primary;
+            }
+            &-disabled {
+                color: @link-disabled-color;
+                &:hover {
+                    color: @link-disabled-color;
+                }
             }
         }
     }

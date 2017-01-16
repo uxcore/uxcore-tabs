@@ -5,7 +5,6 @@ import RcTabs from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
-const prefixCls = 'kuma-tab';
 const TYPESUFFIX = {
   large: 'lg',
   small: 'sm',
@@ -14,7 +13,7 @@ const TYPESUFFIX = {
 };
 
 
-class Tabs extends RcTabs {
+class Tabs extends React.Component {
   componentWillMount() {
     if (document) {
       const docEle = document.documentElement;
@@ -30,7 +29,7 @@ class Tabs extends RcTabs {
 
   render() {
     const props = this.props;
-    const { onTabClick, extraContent, animated } = props;
+    const { onTabClick, extraContent, animated, prefixCls } = props;
     return (
       <RcTabs
         {...props}
@@ -64,7 +63,7 @@ Tabs.propTypes = assign({}, RcTabs.propTypes, {
 });
 
 Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
-  prefixCls,
+  prefixCls: 'kuma-tab',
   type: 'large',
   animated: true,
   onTabClick: () => {},
