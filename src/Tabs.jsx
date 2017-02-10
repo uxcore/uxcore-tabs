@@ -62,6 +62,9 @@ Tabs.propTypes = assign({}, RcTabs.propTypes, {
   extraContent: PropTypes.element,
 });
 
+delete Tabs.propTypes.renderTabBar;
+delete Tabs.propTypes.renderTabContent;
+
 Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
   prefixCls: 'kuma-tab',
   type: 'large',

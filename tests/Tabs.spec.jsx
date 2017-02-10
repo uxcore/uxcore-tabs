@@ -25,10 +25,12 @@ describe('Tabs', () => {
     expect(Tabs.propTypes.onChange).to.be(PropTypes.func);
     expect(Tabs.propTypes.onTabClick).to.be(PropTypes.func);
     expect(Tabs.propTypes.destroyInactiveTabPane).to.be(PropTypes.bool);
-    // expect(Tabs.propTypes.type).to.exist; // 暂时无法准确检查 oneOf
+    expect(Tabs.propTypes.type).to.be.ok(); // 暂时无法准确检查 oneOf
     expect(Tabs.propTypes.animated).to.be(PropTypes.bool);
-    // expect(Tabs.propTypes.tabBarPosition).to.exist;
+    expect(Tabs.propTypes.tabBarPosition).to.be.ok();
     expect(Tabs.propTypes.extraContent).to.be(PropTypes.element);
+    expect(Tabs.propTypes.renderTabBar).to.be(undefined);
+    expect(Tabs.propTypes.renderTabContent).to.be(undefined);
   });
 
   it('has a correct sub component', () => {
