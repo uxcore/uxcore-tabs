@@ -28,7 +28,7 @@ class Tabs extends React.Component {
   }
 
   render() {
-    const props = this.props;
+    const { props } = this;
     const { onTabClick, extraContent, animated, prefixCls } = props;
     return (
       <RcTabs
@@ -50,20 +50,15 @@ class Tabs extends React.Component {
   }
 }
 
-Tabs.propTypes = assign({}, RcTabs.propTypes, {
-  activeKey: PropTypes.string,
-  defaultActiveKey: PropTypes.string,
-  onChange: PropTypes.func,
+Tabs.propTypes = {
+  prefixCls: PropTypes.string,
   onTabClick: PropTypes.func,
-  destroyInactiveTabPane: PropTypes.bool,
+  className: PropTypes.string,
   type: PropTypes.oneOf(['large', 'small', 'filter', 'brick']),
   animated: PropTypes.bool,
-  tabBarPosition: PropTypes.oneOf(['top', 'bottom', 'left', 'right']),
   extraContent: PropTypes.element,
-});
+};
 
-delete Tabs.propTypes.renderTabBar;
-delete Tabs.propTypes.renderTabContent;
 
 Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
   prefixCls: 'kuma-tab',
