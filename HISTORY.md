@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.0
+
+* `NEW` apply new style
+
 ## 0.5.5
 
 * `FIXED` fix hover style bug when tab is disabled

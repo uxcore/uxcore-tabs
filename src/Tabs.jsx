@@ -10,6 +10,7 @@ const TYPESUFFIX = {
   small: 'sm',
   filter: 'filter',
   brick: 'brick',
+  open: 'open',
 };
 
 
