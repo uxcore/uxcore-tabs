@@ -55,7 +55,7 @@ Tabs.propTypes = {
   prefixCls: PropTypes.string,
   onTabClick: PropTypes.func,
   className: PropTypes.string,
-  type: PropTypes.oneOf(['large', 'small', 'filter', 'brick']),
+  type: PropTypes.oneOf(['large', 'small', 'filter', 'brick', 'open']),
   animated: PropTypes.bool,
   extraContent: PropTypes.element,
 };

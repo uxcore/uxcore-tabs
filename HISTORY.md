@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.1
+
+* `FIXED` type propTypes validation
+
 ## 0.6.0
 
 * `NEW` apply new style
