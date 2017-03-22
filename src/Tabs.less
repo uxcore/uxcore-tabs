@@ -240,23 +240,27 @@
                 height: @__tab_brick_height;
                 line-height: @__tab_brick_height - 2;
                 border-color: @border-color;
-                border-width: 1px 1px 1px 0;
+                border-width: 1px 0px 1px 1px;
                 border-style: solid;
                 font-size: 14px;
                 padding: 0 30px;
                 &-active {
                     background-color: @brand-primary;
                     color: #fff;
+                    border-color: @brand-primary;
+                    & + .kuma-tab-tab {
+                        border-left-color: @brand-primary;
+                    }
                 }
                 &-prev, &-next {
                     display: none;
                 }
                 &:nth-of-type(2) {
-                    border-width: 1px 1px 1px 1px;
+                    border-width: 1px 0px 1px 1px;
                     border-radius: 3px 0 0 3px;
                 }
                 &:last-of-type {
-                    border-width: 1px 1px 1px 0;
+                    border-width: 1px 1px 1px 1px;
                     border-radius: 0 3px 3px 0;
                 }
             }

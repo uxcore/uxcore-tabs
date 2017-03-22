@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.2
+
+* `CHANGED` brick style adjustment
+
 ## 0.6.1
 
 * `FIXED` type propTypes validation
