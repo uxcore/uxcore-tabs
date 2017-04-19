@@ -170,7 +170,7 @@
     }
     // small
     &.kuma-tab-sm {
-        @__tab_sm_height: 39px;
+        @__tab_sm_height: 40px;
         > .kuma-tab-bar {
             background-color: @basic-400;
             height: @__tab_sm_height;
@@ -202,6 +202,7 @@
     // filter
     &.kuma-tab-filter {
         @__tab_filter_height: 20px;
+        background: transparent;
         > .kuma-tab-bar {
             .kuma-tab-nav-container {
                 padding: 20px 30px;
@@ -229,12 +230,11 @@
     }
     // brick
     &.kuma-tab-brick {
-        @__tab_brick_height: 34px;
+        @__tab_brick_height: 28px;
+        background: transparent;
         > .kuma-tab-bar {
             .kuma-tab-nav-container {
                 padding: 20px 30px;
-            }
-            .kuma-tab-nav {
             }
             .kuma-tab-tab {
                 height: @__tab_brick_height;
@@ -245,8 +245,8 @@
                 font-size: 14px;
                 padding: 0 30px;
                 &-active {
-                    background-color: @brand-primary;
-                    color: #fff;
+                    background-color: @brand-primary-alpha-8;
+                    color: @brand-primary;
                     border-color: @brand-primary;
                     & + .kuma-tab-tab {
                         border-left-color: @brand-primary;
@@ -383,6 +383,7 @@
 
 .kuma-tab-top, .kuma-tab-bottom {
     overflow-x: hidden;
+    background: white;
     .kuma-tab-nav-container-scrolling {
         padding-left: 32px;
         padding-right: 32px;
@@ -411,24 +412,11 @@
     }
 }
 
-.kuma-tab-top {
-    // border-bottom: 2px solid #f3f3f3;
-    .kuma-tab-bar {
-        // border-bottom: 1px solid #f3f3f3;
-    }
-}
-
-.kuma-tab-bottom {
-    // border-top: 2px solid #f3f3f3;
-    .kuma-tab-bar {
-    //   border-top: 1px solid #f3f3f3;
-    }
-}
-
 
 .kuma-tab-left, .kuma-tab-right {
     overflow-y: hidden;
     height: 100%;
+    background: white;
     .kuma-tab-bar {
         height: 100%;
         .kuma-tab-nav-container {
