@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.4
+
+* `CHANGED` style change
+
 ## 0.6.3
 
 * `CHANGED` brick style adjustment

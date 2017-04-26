@@ -13,8 +13,8 @@
     .kuma-tab {
         border: none;
     }
-    // border: 1px solid @border-color;
     &-bar {
+        border-bottom: 1px solid @split-line-color;
         .kuma-tab-tab {
             transition: background-color 0.3s ease-out, color 0.3s ease-out;
             display: inline-block;
@@ -23,6 +23,8 @@
             color: @text-secondary-color;
             &-active {
                 color: @brand-primary;
+                border: 1px solid @split-line-color;
+                border-bottom: none;
             }
             &:hover {
                 color: @brand-primary;
@@ -63,7 +65,7 @@
                 .kuma-tab-ink-bar {
                     position: absolute;
                     top: 0px;
-                    height: 3px;
+                    height: 2px;
                     background-color: @brand-primary;
                     z-index: 1;
                     transition: all @transition-ease @transition-duration; 
@@ -85,7 +87,7 @@
             }
 
             .kuma-tab-tab {
-                padding: 0 45px;
+                padding: 0 24px;
                 &-prev,
                 &-next {
                     -webkit-user-select: none;
@@ -155,10 +157,8 @@
                 &-active {
                     position: relative;
                     background-color: @basic-100;
-                    // border-width: 0 1px;
-                    // border-color: transparent @border-color;
-                    // border-style: solid;
-                    padding: 0 44px;
+                    line-height: 47px;
+                    padding: 0 23px;
                 }
                 &-prev, 
                 &-next {
@@ -182,11 +182,12 @@
                 margin-left: -1px;
                 height: @__tab_sm_height;
                 line-height: @__tab_sm_height;
-                font-size: 14px;
+                font-size: 12px;
                 &-active {
                     position: relative;
-                    padding: 0 44px;
+                    padding: 0 23px;
                     background-color: @basic-100;
+                    line-height: 39px;
                     // border-width: 0 1px;
                     // border-color: transparent @border-color;
                     // border-style: solid;
@@ -216,6 +217,8 @@
                 border-right: 1px solid @border-color;
                 &-active {
                     color: @brand-primary;
+                    border: none;
+                    border-right: 1px solid @border-color;
                 }
                 &-prev, 
                 &-next {
@@ -295,6 +298,7 @@
                 position: relative;
                 background-color: @basic-100;
                 padding: 0 44px;
+                border: none;
             }
             &-prev, 
             &-next {
@@ -390,6 +394,7 @@
     }
     .kuma-tab-nav-scroll {
         width: 99999px;
+        // border-bottom: 1px solid @split-line-color;
     }
     .kuma-tab-nav-wrap {
         width: 100%;
