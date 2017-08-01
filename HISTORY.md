@@ -1,6 +1,49 @@
 # History
 ----
 
+## 0.6.4
+
+* `CHANGED` style change
+
+## 0.6.3
+
+* `CHANGED` brick style adjustment
+
+## 0.6.2
+
+* `CHANGED` brick style adjustment
+
+## 0.6.1
+
+* `FIXED` type propTypes validation
+
+## 0.6.0
+
+* `NEW` apply new style
+
+## 0.5.5
+
+* `FIXED` fix hover style bug when tab is disabled
+
+## 0.5.4
+
+* `NEW` add unit tests
+* `NEW` improved hover & enter animation
+
+## 0.5.3
+
+`FIXED` brick & filter style bug
+
+## 0.5.2
+
+`FIXED` fix border-bottom style bug ([#13](https://github.com/uxcore/uxcore-tabs/issues/13))
+
+## 0.5.1
+`CHANGED` set the height of the tabpane to 0 when inactive
+
+## 0.5.0
+`NEW` support switch when the number of items is too large
+
 ## 0.4.5
 `NEW` support prop className 
 

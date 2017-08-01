@@ -1,38 +1,43 @@
-import React from 'react';
-import RcTabs from 'rc-tabs';
-import assign from 'object-assign';
+import React, { PropTypes } from 'react';
 import classnames from 'classnames';
+import assign from 'object-assign';
+import RcTabs from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
-const prefixCls = 'kuma-tab';
 const TYPESUFFIX = {
   large: 'lg',
   small: 'sm',
   filter: 'filter',
   brick: 'brick',
+  open: 'open',
 };
 
-class Tabs extends RcTabs {
+
+class Tabs extends React.Component {
   componentWillMount() {
-    const docEle = document.documentElement;
+    if (document) {
+      const docEle = document.documentElement;
 
-    this.supportTransition = ['ms', 'moz', 'webkit', ''].some( function (prefix) {
-      const prop = prefix ? prefix + 'Transition' : 'transition';
-      return prop in docEle.style;
-    });
+      this.supportTransition = ['ms', 'moz', 'webkit', ''].some((prefix) => {
+        const prop = prefix ? `${prefix}Transition` : 'transition';
+        return prop in docEle.style;
+      });
+    } else {
+      this.supportTransition = [];
+    }
   }
-  render() {
-    const props = this.props;
-    const { onTabClick, extraContent, animated } = props;
 
+  render() {
+    const { props } = this;
+    const { onTabClick, extraContent, animated, prefixCls } = props;
     return (
       <RcTabs
         {...props}
         className={classnames({
           [`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
           [props.className]: !!props.className,
-          'no-csstransitions no-flexbox': !this.supportTransition,
+          'no-csstransitions no-flexbox': this.supportTransition.length === 0,
         })}
         renderTabBar={() => (
           <ScrollableInkTabBar
@@ -46,20 +51,24 @@ class Tabs extends RcTabs {
   }
 }
 
+Tabs.propTypes = {
+  prefixCls: PropTypes.string,
+  onTabClick: PropTypes.func,
+  className: PropTypes.string,
+  type: PropTypes.oneOf(['large', 'small', 'filter', 'brick', 'open']),
+  animated: PropTypes.bool,
+  extraContent: PropTypes.element,
+};
+
+
+Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
+  prefixCls: 'kuma-tab',
+  type: 'large',
+  animated: true,
+  onTabClick: () => {},
+});
 
 Tabs.displayName = 'uxcore-tabs';
-Tabs.defaultProps = assign(RcTabs.defaultProps, {
-  prefixCls,
-  type: 'large',
-  extraContent: null,
-  animated: true,
-  onTabClick() { },
-  renderTabBar() { },
-  renderTabContent() { },
-});
 Tabs.TabPane = RcTabs.TabPane;
-
-
-
 
 export default Tabs;
