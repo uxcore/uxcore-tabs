@@ -277,113 +277,114 @@
             }
         }
      }
-}
-
-&.kuma-tab-open {
-    @__tab_lg_height: 49px;
-    background-color: #fff;
-    > .kuma-tab-bar {
-        height: @__tab_lg_height;
-        border-bottom: 1px solid @border-color; 
-        .kuma-tab-nav-container {
+    &.kuma-tab-open {
+        @__tab_lg_height: 49px;
+        background-color: #fff;
+        > .kuma-tab-bar {
             height: @__tab_lg_height;
-            border-bottom: 0;
-        }
-        .kuma-tab-tab {
-            margin-left: -1px;
-            height: @__tab_lg_height;
-            line-height: @__tab_lg_height;
-            font-size: 16px;
-            &-active {
-                position: relative;
-                background-color: @basic-100;
-                padding: 0 44px;
-                border: none;
+            border-bottom: 1px solid @border-color; 
+            .kuma-tab-nav-container {
+                height: @__tab_lg_height;
+                border-bottom: 0;
             }
-            &-prev, 
-            &-next {
+            .kuma-tab-tab {
+                margin-left: -1px;
+                height: @__tab_lg_height;
                 line-height: @__tab_lg_height;
+                font-size: 16px;
+                &-active {
+                    position: relative;
+                    background-color: @basic-100;
+                    padding: 0 44px;
+                    border: none;
+                }
+                &-prev, 
+                &-next {
+                    line-height: @__tab_lg_height;
+                }
             }
         }
-    }
-    > .kuma-tab-bar {
-        .kuma-tab-nav {
-            position: relative;
-            display: inline-block;
-            -webkit-transform-origin: 0 0;
-            transform-origin: 0 0;
-            .kuma-tab-ink-bar {
-                position: absolute;
-                bottom: 0px;
-                height: 3px;
-                background-color: @brand-primary;
-                z-index: 1;
-                transition: all @transition-ease @transition-duration; 
+        > .kuma-tab-bar {
+            .kuma-tab-nav {
+                position: relative;
+                display: inline-block;
                 -webkit-transform-origin: 0 0;
                 transform-origin: 0 0;
+                .kuma-tab-ink-bar {
+                    position: absolute;
+                    bottom: 0px;
+                    height: 3px;
+                    background-color: @brand-primary;
+                    z-index: 1;
+                    transition: all @transition-ease @transition-duration; 
+                    -webkit-transform-origin: 0 0;
+                    transform-origin: 0 0;
+                }
+                &-container {
+                    overflow: hidden;
+                    white-space: nowrap;
+                    position: relative;
+                }
+                &-wrap {
+                    overflow: hidden;
+                }
             }
-            &-container {
-                overflow: hidden;
-                white-space: nowrap;
-                position: relative;
-            }
-            &-wrap {
-                overflow: hidden;
-            }
-        }
 
-        .kuma-tab-tab {
-            padding: 0 24px;
-            &-prev,
-            &-next {
-                -webkit-user-select: none;
-                    -moz-user-select: none;
-                    -ms-user-select: none;
-                        user-select: none;
-                z-index: 10;
-                line-height: 49px;
-                cursor: pointer;
-                border: none;
-                position: absolute;
-                margin-right: -2px;
-                width: 32px;
-                height: 100%;
-                top: 0;
-                text-align: center;
-                color: #666;
-            }
-            &-prev-icon,
-            &-next-icon {
-                display: inline-block;
-                font-smoothing: antialiased;
-                text-stroke-width: 0;
-                font-family: kuma;
-                font-size: 16px;
-            }
-            &-prev-icon:before,
-            &-next-icon:before {
-                display: block;
-            }
-            
-            &-next-icon:before {
-                content: "\e643";
-            }
-            &-prev-icon:before {
-                content: "\e644";
-            }
-            &-next {
-                right: 2px;
-            }
-            &-prev {
-                left: 0;
-            }
-            &-btn-disabled {
-                color: @link-disabled-color;
-                cursor: not-allowed;
+            .kuma-tab-tab {
+                padding: 0 24px;
+                &-prev,
+                &-next {
+                    -webkit-user-select: none;
+                        -moz-user-select: none;
+                        -ms-user-select: none;
+                            user-select: none;
+                    z-index: 10;
+                    line-height: 49px;
+                    cursor: pointer;
+                    border: none;
+                    position: absolute;
+                    margin-right: -2px;
+                    width: 32px;
+                    height: 100%;
+                    top: 0;
+                    text-align: center;
+                    color: #666;
+                }
+                &-prev-icon,
+                &-next-icon {
+                    display: inline-block;
+                    font-smoothing: antialiased;
+                    text-stroke-width: 0;
+                    font-family: kuma;
+                    font-size: 16px;
+                }
+                &-prev-icon:before,
+                &-next-icon:before {
+                    display: block;
+                }
+                
+                &-next-icon:before {
+                    content: "\e643";
+                }
+                &-prev-icon:before {
+                    content: "\e644";
+                }
+                &-next {
+                    right: 2px;
+                }
+                &-prev {
+                    left: 0;
+                }
+                &-btn-disabled {
+                    color: @link-disabled-color;
+                    cursor: not-allowed;
+                }
             }
         }
     }
 }
+
+
 
 .kuma-tab-top, .kuma-tab-bottom {
     overflow-x: hidden;
