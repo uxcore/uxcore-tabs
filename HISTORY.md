@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.5
+
+* `FIXED` fix less code position
+
 ## 0.6.4
 
 * `CHANGED` style change
