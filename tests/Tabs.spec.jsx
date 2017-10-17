@@ -1,11 +1,15 @@
 import expect from 'expect.js';
-import React, { PropTypes } from 'react';
-import { mount, shallow } from 'enzyme';
+import React from 'react';
+import PropTypes from 'prop-types';
+import Enzyme, { mount, shallow } from 'enzyme';
+import Adapter from 'enzyme-adapter-react-15';
 import RcTabs from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
 
 import Tabs from '../src';
+
+Enzyme.configure({ adapter: new Adapter() });
 
 describe('Tabs', () => {
   let instance;
