@@ -25,7 +25,7 @@ class Tabs extends React.Component {
         return prop in docEle.style;
       });
     } else {
-      this.supportTransition = [];
+      this.supportTransition = false;
     }
   }
 
@@ -38,7 +38,7 @@ class Tabs extends React.Component {
         className={classnames({
           [`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
           [props.className]: !!props.className,
-          'no-csstransitions no-flexbox': this.supportTransition.length === 0,
+          'no-csstransitions no-flexbox': !this.supportTransition,
         })}
         renderTabBar={() => (
           <ScrollableInkTabBar

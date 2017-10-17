@@ -12,10 +12,9 @@ import Tabs from '../src';
 Enzyme.configure({ adapter: new Adapter() });
 
 describe('Tabs', () => {
-  let instance;
   it('is shallow rendered without error', () => {
-    instance = shallow(<Tabs />);
-    expect(instance.exists()).to.be(true);
+    const wrapper = shallow(<Tabs />);
+    expect(wrapper.exists()).to.be(true);
   });
 
   it('has a correct display name', () => {
@@ -49,15 +48,16 @@ describe('Tabs', () => {
       extraContent: <div />,
       animated: false,
     };
-    instance = mount(<Tabs {...props} />);
-    const scrollableInkTabBarProps = instance.find(ScrollableInkTabBar).props();
-    let tabContentProps = instance.find(TabContent).props();
+    let wrapper = mount(<Tabs {...props} />);
+    const scrollableInkTabBarProps = wrapper.find(ScrollableInkTabBar).props();
+    let tabContentProps = wrapper.find(TabContent).props();
     expect(scrollableInkTabBarProps.onTabClick.__reactBoundContext.tabBar.props.onTabClick).to.eql(props.onTabClick); // 因为依赖组件的实现没有immutable props
     expect(scrollableInkTabBarProps.extraContent).to.eql(props.extraContent);
     expect(tabContentProps).to.have.property('animated', props.animated);
     props.animated = true;
-    instance = mount(<Tabs {...props} />);
-    tabContentProps = instance.find(TabContent).props();
+    
+    wrapper = mount(<Tabs {...props} />);
+    tabContentProps = wrapper.find(TabContent).props();
     expect(tabContentProps).to.have.property('animated', props.animated);
   });
 });
