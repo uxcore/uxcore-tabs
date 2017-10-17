@@ -1,4 +1,5 @@
-import React, { PropTypes } from 'react';
+import React from 'react';
+import PropTypes from 'prop-types';
 import classnames from 'classnames';
 import assign from 'object-assign';
 import RcTabs from 'rc-tabs';
@@ -24,7 +25,7 @@ class Tabs extends React.Component {
         return prop in docEle.style;
       });
     } else {
-      this.supportTransition = [];
+      this.supportTransition = false;
     }
   }
 
@@ -37,7 +38,7 @@ class Tabs extends React.Component {
         className={classnames({
           [`${prefixCls}-${TYPESUFFIX[props.type]}`]: true,
           [props.className]: !!props.className,
-          'no-csstransitions no-flexbox': this.supportTransition.length === 0,
+          'no-csstransitions no-flexbox': !this.supportTransition,
         })}
         renderTabBar={() => (
           <ScrollableInkTabBar

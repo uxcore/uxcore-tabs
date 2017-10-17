@@ -1,6 +1,14 @@
 # History
 ----
 
+## 0.6.7
+
+* `UPGRADE` upgrade to react 15
+
+## 0.6.6
+
+* `FIXED` fix style bug when tab with left(right) postion
+
 ## 0.6.5
 
 * `FIXED` fix less code position
