@@ -435,11 +435,12 @@
     overflow-y: hidden;
     height: 100%;
     background: white;
+    display: flex;
     .kuma-tab-nav-scroll {
         width: auto;
     }
     .kuma-tab-bar {
-        height: 100%;
+        width: auto;
         .kuma-tab-nav-container {
             height: 100% !important;
             .kuma-tab-nav-wrap {
@@ -485,6 +486,9 @@
                 top: auto;
             }
         }
+    }
+    .kuma-tab-content {
+        flex: 1;
     }
     .kuma-tab-content-animated {
         -webkit-box-orient: vertical;

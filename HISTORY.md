@@ -1,13 +1,17 @@
 # History
 ----
 
+## 0.6.8
+
+* `FIXED` fix the heigth of tab-bar
+
 ## 0.6.7
 
 * `FIXED` fix style bug if left tab embeded in top tab
 
 ## 0.6.6
 
-* `FIXED` fix style bug when tab with left(right) postion
+* `FIXED` fix style bug when tab with left(right) position
 * `UPGRADE` upgrade to react 15
 
 ## 0.6.5
