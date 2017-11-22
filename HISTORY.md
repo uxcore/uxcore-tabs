@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.9
+
+* `FIXED` wrong open type split-line color
+
 ## 0.6.8
 
 * `FIXED` fix the heigth of tab-bar
