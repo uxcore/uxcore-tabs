@@ -20,7 +20,7 @@
             display: inline-block;
             vertical-align: top;
             cursor: pointer;
-            color: @text-secondary-color;
+            color: @dark-alpha-3;
             &-active {
                 color: @brand-primary;
                 border: 1px solid @split-line-color;
@@ -60,7 +60,6 @@
             .kuma-tab-nav {
                 position: relative;
                 display: inline-block;
-                -webkit-transform-origin: 0 0;
                 transform-origin: 0 0;
                 .kuma-tab-ink-bar {
                     position: absolute;
@@ -69,12 +68,7 @@
                     background-color: @brand-primary;
                     z-index: 1;
                     transition: all @transition-ease @transition-duration; 
-                    -webkit-transform-origin: 0 0;
                     transform-origin: 0 0;
-                    &-animated {
-                    }
-                }
-                &-animated {
                 }
                 &-container {
                     overflow: hidden;
@@ -151,7 +145,7 @@
                 margin-left: -1px;
                 height: @__tab_lg_height;
                 line-height: @__tab_lg_height;
-                font-size: 16px;
+                font-size: 14px;
                 &-active {
                     position: relative;
                     background-color: @basic-100;
@@ -459,6 +453,7 @@
             }
     
             .kuma-tab-tab {
+                margin: 0;
                 display: block;
                 &-next-icon:before {
                   content: "\e642";
@@ -486,6 +481,9 @@
                 top: auto;
             }
         }
+    }
+    .kuma-tab-tab-active {
+        border: 0;
     }
     .kuma-tab-content {
         flex: 1;
@@ -517,13 +515,11 @@
         .kuma-tab-nav-container {
             .kuma-tab-nav.kuma-tab-nav-animated {
                 .kuma-tab-ink-bar {
-                    right: 0;
+                    left: 0;
                 }
             }
         }
     }
-    
-    
     .kuma-tab-content-animated {
         -webkit-box-orient: vertical;
         -webkit-box-direction: normal;
@@ -544,7 +540,7 @@
         .kuma-tab-nav-container {
             .kuma-tab-nav.kuma-tab-nav-animated { 
                   .kuma-tab-ink-bar {
-                      left: 0;
+                      right: 0;
                   }
               }
         }

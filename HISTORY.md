@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.10
+
+* `FIXED` some wrong style
+
 ## 0.6.9
 
 * `FIXED` wrong open type split-line color
