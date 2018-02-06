@@ -5,555 +5,546 @@
  * Copyright 2014-2015, Uxcore Team, Alinw.
  * All rights reserved.
  */
+
 .kuma-tab-bar {
-    outline: 0 none;
+  outline: 0 none;
 }
+
 .kuma-tab {
-    // 嵌套用
-    .kuma-tab {
-        border: none;
-    }
-    &-bar {
-        border-bottom: 1px solid @split-line-color;
-        .kuma-tab-tab {
-            transition: background-color 0.3s ease-out, color 0.3s ease-out;
-            display: inline-block;
-            vertical-align: top;
-            cursor: pointer;
-            color: @dark-alpha-3;
-            &-active {
-                color: @brand-primary;
-                border: 1px solid @split-line-color;
-                border-bottom: none;
-            }
-            &:hover {
-                color: @brand-primary;
-            }
-            &-disabled {
-                color: @link-disabled-color;
-                &:hover {
-                    color: @link-disabled-color;
-                }
-            }
+  // 嵌套用
+  .kuma-tab {
+    border: none;
+  }
+  &-bar {
+    border-bottom: 1px solid @split-line-color;
+    .kuma-tab-tab {
+      transition: background-color 0.3s ease-out, color 0.3s ease-out;
+      display: inline-block;
+      vertical-align: top;
+      cursor: pointer;
+      color: @dark-alpha-3;
+      &-active {
+        color: @brand-primary;
+        border: 1px solid @split-line-color;
+        border-bottom: none;
+      }
+      &:hover {
+        color: @brand-primary;
+      }
+      &-disabled {
+        color: @link-disabled-color;
+        &:hover {
+          color: @link-disabled-color;
         }
+      }
     }
-    &-content {
-        zoom: 1;
-        .kuma-tab-tabpane {
-            overflow: auto;
-            -ms-flex-negative: 0;
-                flex-shrink: 0;
-            &-hidden {
-                display: none;
-            }
-        }
-        &-animated {
-            display: -webkit-box;
-            display: -ms-flexbox;
-            display: flex;
-            will-change: transform;
-        }
+  }
+  &-content {
+    zoom: 1;
+    .kuma-tab-tabpane {
+      overflow: auto;
+      -ms-flex-negative: 0;
+      flex-shrink: 0;
+      &-hidden {
+        display: none;
+      }
     }
-    
-    &.kuma-tab-lg, &.kuma-tab-sm {
-        > .kuma-tab-bar {
-            .kuma-tab-nav {
-                position: relative;
-                display: inline-block;
-                transform-origin: 0 0;
-                .kuma-tab-ink-bar {
-                    position: absolute;
-                    top: 0px;
-                    height: 2px;
-                    background-color: @brand-primary;
-                    z-index: 1;
-                    transition: all @transition-ease @transition-duration; 
-                    transform-origin: 0 0;
-                }
-                &-container {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    position: relative;
-                }
-                &-wrap {
-                    overflow: hidden;
-                }
-            }
-
-            .kuma-tab-tab {
-                padding: 0 24px;
-                &-prev,
-                &-next {
-                    -webkit-user-select: none;
-                       -moz-user-select: none;
-                        -ms-user-select: none;
-                            user-select: none;
-                    z-index: 10;
-                    line-height: 49px;
-                    cursor: pointer;
-                    border: none;
-                    position: absolute;
-                    margin-right: -2px;
-                    width: 32px;
-                    height: 100%;
-                    top: 0;
-                    text-align: center;
-                    color: #666;
-                }
-                &-prev-icon,
-                &-next-icon {
-                    display: inline-block;
-                    font-smoothing: antialiased;
-                    text-stroke-width: 0;
-                    font-family: kuma;
-                    font-size: 16px;
-                }
-                &-prev-icon:before,
-                &-next-icon:before {
-                  display: block;
-                }
-                
-                &-next-icon:before {
-                  content: "\e643";
-                }
-                &-prev-icon:before {
-                  content: "\e644";
-                }
-                &-next {
-                    right: 2px;
-                }
-                &-prev {
-                    left: 0;
-                }
-                &-btn-disabled {
-                    color: @link-disabled-color;
-                    cursor: not-allowed;
-                }
-            }
-        }
+    &-animated {
+      display: -webkit-box;
+      display: -ms-flexbox;
+      display: flex;
+      will-change: transform;
     }
-    
-    // large
+  }
+  &.kuma-tab-lg,
+  &.kuma-tab-sm {
+    >.kuma-tab-bar {
+      .kuma-tab-nav {
+        position: relative;
+        display: inline-block;
+        transform-origin: 0 0;
+        .kuma-tab-ink-bar {
+          position: absolute;
+          top: 0px;
+          height: 2px;
+          background-color: @brand-primary;
+          z-index: 1;
+          transition: all @transition-ease @transition-duration;
+          transform-origin: 0 0;
+        }
+        &-container {
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+        }
+        &-wrap {
+          overflow: hidden;
+        }
+      }
+      .kuma-tab-tab {
+        padding: 0 24px;
+        &-prev,
+        &-next {
+          user-select: none;
+          z-index: 10;
+          line-height: 49px;
+          cursor: pointer;
+          border: none;
+          position: absolute;
+          margin-right: -2px;
+          width: 32px;
+          height: 100%;
+          top: 0;
+          text-align: center;
+          color: #666;
+        }
+        &-prev-icon,
+        &-next-icon {
+          display: inline-block;
+          font-smoothing: antialiased;
+          text-stroke-width: 0;
+          font-family: kuma;
+          font-size: 16px;
+        }
+        &-prev-icon:before,
+        &-next-icon:before {
+          display: block;
+        }
+        &-next-icon:before {
+          content: "\e643";
+        }
+        &-prev-icon:before {
+          content: "\e644";
+        }
+        &-next {
+          right: 2px;
+        }
+        &-prev {
+          left: 0;
+        }
+        &-btn-disabled {
+          color: @link-disabled-color;
+          cursor: not-allowed;
+        }
+      }
+    }
+  } // large
+  @__tab_lg_height: 49px;
+  &.kuma-tab-lg {
+    >.kuma-tab-bar {
+      background-color: white;
+      .kuma-tab-nav-container {
+        border-bottom: 0;
+      }
+      .kuma-tab-tab {
+        margin-left: -1px;
+        height: @__tab_lg_height;
+        line-height: @__tab_lg_height;
+        font-size: 14px;
+        &-active {
+          position: relative;
+          background-color: @basic-100;
+          line-height: 47px;
+          padding: 0 23px;
+        }
+        &-prev,
+        &-next {
+          background-color: @basic-300;
+          line-height: @__tab_lg_height;
+        }
+      }
+    }
+  }
+  &.kuma-tab-lg.kuma-tab-top,
+  &.kuma-tab-lg.kuma-tab-bottom {
+    >.kuma-tab-bar {
+      height: @__tab_lg_height;
+      .kuma-tab-nav-container {
+        height: @__tab_lg_height;
+      }
+    }
+  } // small
+  @__tab_sm_height: 40px;
+  &.kuma-tab-sm {
+    >.kuma-tab-bar {
+      background-color: white;
+      .kuma-tab-nav-container {
+        border-bottom: 0;
+      }
+      .kuma-tab-tab {
+        margin-left: -1px;
+        height: @__tab_sm_height;
+        line-height: @__tab_sm_height;
+        font-size: 12px;
+        &-active {
+          position: relative;
+          padding: 0 23px;
+          background-color: @basic-100;
+          line-height: 39px; // border-width: 0 1px;
+          // border-color: transparent @border-color;
+          // border-style: solid;
+        }
+        &-prev,
+        &-next {
+          background-color: @basic-300;
+          line-height: @__tab_sm_height;
+        }
+      }
+    }
+  }
+  &.kuma-tab-sm.kuma-tab-top,
+  &.kuma-tab-sm.kuma-tab-bottom {
+    >.kuma-tab-bar {
+      height: @__tab_sm_height;
+      .kuma-tab-nav-container {
+        height: @__tab_sm_height;
+      }
+    }
+  } // filter
+  &.kuma-tab-filter {
+    @__tab_filter_height: 20px;
+    background: transparent;
+    >.kuma-tab-bar {
+      .kuma-tab-nav-container {
+        padding: 20px 30px;
+      }
+      .kuma-tab-tab {
+        margin: 5px 0;
+        padding: 0 25px;
+        height: @__tab_filter_height;
+        line-height: @__tab_filter_height;
+        font-size: 14px;
+        border-right: 1px solid @border-color;
+        &-active {
+          color: @brand-primary;
+          border: none;
+          border-right: 1px solid @border-color;
+        }
+        &-prev,
+        &-next {
+          display: none;
+        }
+        &:nth-of-type {}
+        &:last-of-type {
+          border-right: 0 none;
+        }
+      }
+    }
+  } // brick
+  &.kuma-tab-brick {
+    @__tab_brick_height: 28px;
+    background: transparent;
+    >.kuma-tab-bar {
+      .kuma-tab-nav-container {
+        padding: 20px 30px;
+      }
+      .kuma-tab-tab {
+        height: @__tab_brick_height;
+        line-height: @__tab_brick_height - 2;
+        border-color: @border-color;
+        border-width: 1px 0px 1px 1px;
+        border-style: solid;
+        font-size: 14px;
+        padding: 0 30px;
+        &-active {
+          background-color: @brand-primary-alpha-8;
+          color: @brand-primary;
+          border-color: @brand-primary;
+          &+.kuma-tab-tab {
+            border-left-color: @brand-primary;
+          }
+        }
+        &-prev,
+        &-next {
+          display: none;
+        }
+        &:nth-of-type(2) {
+          border-width: 1px 0px 1px 1px;
+          border-radius: 3px 0 0 3px;
+        }
+        &:last-of-type {
+          border-width: 1px 1px 1px 1px;
+          border-radius: 0 3px 3px 0;
+        }
+      }
+    }
+  }
+  &.kuma-tab-filter,
+  &.kuma-tab-brick {
+    &.kuma-tab-top {
+      .kuma-tab-bar {
+        border-bottom: none;
+      }
+    }
+  }
+  &.kuma-tab-open {
     @__tab_lg_height: 49px;
-    &.kuma-tab-lg {
-        > .kuma-tab-bar {
-            background-color: @basic-400;
-            .kuma-tab-nav-container {
-                border-bottom: 0;
-            }
-            .kuma-tab-tab {
-                margin-left: -1px;
-                height: @__tab_lg_height;
-                line-height: @__tab_lg_height;
-                font-size: 14px;
-                &-active {
-                    position: relative;
-                    background-color: @basic-100;
-                    line-height: 47px;
-                    padding: 0 23px;
-                }
-                &-prev, 
-                &-next {
-                  background-color: @basic-300;
-                  line-height: @__tab_lg_height;
-                }
-            }
+    background-color: #fff;
+    >.kuma-tab-bar {
+      height: @__tab_lg_height;
+      border-bottom: 1px solid @split-line-color;
+      .kuma-tab-nav-container {
+        height: @__tab_lg_height;
+        border-bottom: 0;
+      }
+      .kuma-tab-tab {
+        margin-left: -1px;
+        height: @__tab_lg_height;
+        line-height: @__tab_lg_height;
+        font-size: 16px;
+        &-active {
+          position: relative;
+          background-color: @basic-100;
+          padding: 0 44px;
+          border: none;
         }
+        &-prev,
+        &-next {
+          line-height: @__tab_lg_height;
+        }
+      }
     }
-    &.kuma-tab-lg.kuma-tab-top, &.kuma-tab-lg.kuma-tab-bottom {
-        > .kuma-tab-bar {
-            height: @__tab_lg_height;
-            .kuma-tab-nav-container {
-                height: @__tab_lg_height;
-            }
+    >.kuma-tab-bar {
+      .kuma-tab-nav {
+        position: relative;
+        display: inline-block;
+        -webkit-transform-origin: 0 0;
+        transform-origin: 0 0;
+        .kuma-tab-ink-bar {
+          position: absolute;
+          bottom: 0px;
+          height: 2px;
+          background-color: @brand-primary;
+          z-index: 1;
+          transition: all @transition-ease @transition-duration;
+          -webkit-transform-origin: 0 0;
+          transform-origin: 0 0;
         }
+        &-container {
+          overflow: hidden;
+          white-space: nowrap;
+          position: relative;
+        }
+        &-wrap {
+          overflow: hidden;
+        }
+      }
+      .kuma-tab-tab {
+        padding: 0 24px;
+        &-prev,
+        &-next {
+          -webkit-user-select: none;
+          -moz-user-select: none;
+          -ms-user-select: none;
+          user-select: none;
+          z-index: 10;
+          line-height: 49px;
+          cursor: pointer;
+          border: none;
+          position: absolute;
+          margin-right: -2px;
+          width: 32px;
+          height: 100%;
+          top: 0;
+          text-align: center;
+          color: #666;
+        }
+        &-prev-icon,
+        &-next-icon {
+          display: inline-block;
+          font-smoothing: antialiased;
+          text-stroke-width: 0;
+          font-family: kuma;
+          font-size: 16px;
+        }
+        &-prev-icon:before,
+        &-next-icon:before {
+          display: block;
+        }
+        &-next-icon:before {
+          content: "\e643";
+        }
+        &-prev-icon:before {
+          content: "\e644";
+        }
+        &-next {
+          right: 2px;
+        }
+        &-prev {
+          left: 0;
+        }
+        &-btn-disabled {
+          color: @link-disabled-color;
+          cursor: not-allowed;
+        }
+      }
     }
-    // small
-    @__tab_sm_height: 40px;
-    &.kuma-tab-sm {
-        > .kuma-tab-bar {
-            background-color: @basic-400;
-            .kuma-tab-nav-container {
-                border-bottom: 0;
-            }
-            .kuma-tab-tab {
-                margin-left: -1px;
-                height: @__tab_sm_height;
-                line-height: @__tab_sm_height;
-                font-size: 12px;
-                &-active {
-                    position: relative;
-                    padding: 0 23px;
-                    background-color: @basic-100;
-                    line-height: 39px;
-                    // border-width: 0 1px;
-                    // border-color: transparent @border-color;
-                    // border-style: solid;
-                }
-                &-prev,
-                &-next {
-                    background-color: @basic-300;
-                    line-height: @__tab_sm_height;
-                }
-            }
-        }
-    }
-    &.kuma-tab-sm.kuma-tab-top, &.kuma-tab-sm.kuma-tab-bottom {
-        > .kuma-tab-bar {
-            height: @__tab_sm_height;
-            .kuma-tab-nav-container {
-                height: @__tab_sm_height;
-            }
-        }
-    }
-    // filter
-    &.kuma-tab-filter {
-        @__tab_filter_height: 20px;
-        background: transparent;
-        > .kuma-tab-bar {
-            .kuma-tab-nav-container {
-                padding: 20px 30px;
-            }
-            .kuma-tab-tab {
-                margin: 5px 0;
-                padding: 0 25px;
-                height: @__tab_filter_height;
-                line-height: @__tab_filter_height;
-                font-size: 14px;
-                border-right: 1px solid @border-color;
-                &-active {
-                    color: @brand-primary;
-                    border: none;
-                    border-right: 1px solid @border-color;
-                }
-                &-prev, 
-                &-next {
-                  display: none;
-                }
-                &:nth-of-type {}
-                &:last-of-type {
-                    border-right: 0 none;
-                }
-            }
-        }
-    }
-    // brick
-    &.kuma-tab-brick {
-        @__tab_brick_height: 28px;
-        background: transparent;
-        > .kuma-tab-bar {
-            .kuma-tab-nav-container {
-                padding: 20px 30px;
-            }
-            .kuma-tab-tab {
-                height: @__tab_brick_height;
-                line-height: @__tab_brick_height - 2;
-                border-color: @border-color;
-                border-width: 1px 0px 1px 1px;
-                border-style: solid;
-                font-size: 14px;
-                padding: 0 30px;
-                &-active {
-                    background-color: @brand-primary-alpha-8;
-                    color: @brand-primary;
-                    border-color: @brand-primary;
-                    & + .kuma-tab-tab {
-                        border-left-color: @brand-primary;
-                    }
-                }
-                &-prev, &-next {
-                    display: none;
-                }
-                &:nth-of-type(2) {
-                    border-width: 1px 0px 1px 1px;
-                    border-radius: 3px 0 0 3px;
-                }
-                &:last-of-type {
-                    border-width: 1px 1px 1px 1px;
-                    border-radius: 0 3px 3px 0;
-                }
-            }
-        }
-    }
-    &.kuma-tab-filter,
-    &.kuma-tab-brick {
-        &.kuma-tab-top {
-            .kuma-tab-bar {
-                border-bottom: none;
-            }
-        }
-     }
-    &.kuma-tab-open {
-        @__tab_lg_height: 49px;
-        background-color: #fff;
-        > .kuma-tab-bar {
-            height: @__tab_lg_height;
-            border-bottom: 1px solid @split-line-color; 
-            .kuma-tab-nav-container {
-                height: @__tab_lg_height;
-                border-bottom: 0;
-            }
-            .kuma-tab-tab {
-                margin-left: -1px;
-                height: @__tab_lg_height;
-                line-height: @__tab_lg_height;
-                font-size: 16px;
-                &-active {
-                    position: relative;
-                    background-color: @basic-100;
-                    padding: 0 44px;
-                    border: none;
-                }
-                &-prev, 
-                &-next {
-                    line-height: @__tab_lg_height;
-                }
-            }
-        }
-        > .kuma-tab-bar {
-            .kuma-tab-nav {
-                position: relative;
-                display: inline-block;
-                -webkit-transform-origin: 0 0;
-                transform-origin: 0 0;
-                .kuma-tab-ink-bar {
-                    position: absolute;
-                    bottom: 0px;
-                    height: 2px;
-                    background-color: @brand-primary;
-                    z-index: 1;
-                    transition: all @transition-ease @transition-duration; 
-                    -webkit-transform-origin: 0 0;
-                    transform-origin: 0 0;
-                }
-                &-container {
-                    overflow: hidden;
-                    white-space: nowrap;
-                    position: relative;
-                }
-                &-wrap {
-                    overflow: hidden;
-                }
-            }
-
-            .kuma-tab-tab {
-                padding: 0 24px;
-                &-prev,
-                &-next {
-                    -webkit-user-select: none;
-                        -moz-user-select: none;
-                        -ms-user-select: none;
-                            user-select: none;
-                    z-index: 10;
-                    line-height: 49px;
-                    cursor: pointer;
-                    border: none;
-                    position: absolute;
-                    margin-right: -2px;
-                    width: 32px;
-                    height: 100%;
-                    top: 0;
-                    text-align: center;
-                    color: #666;
-                }
-                &-prev-icon,
-                &-next-icon {
-                    display: inline-block;
-                    font-smoothing: antialiased;
-                    text-stroke-width: 0;
-                    font-family: kuma;
-                    font-size: 16px;
-                }
-                &-prev-icon:before,
-                &-next-icon:before {
-                    display: block;
-                }
-                
-                &-next-icon:before {
-                    content: "\e643";
-                }
-                &-prev-icon:before {
-                    content: "\e644";
-                }
-                &-next {
-                    right: 2px;
-                }
-                &-prev {
-                    left: 0;
-                }
-                &-btn-disabled {
-                    color: @link-disabled-color;
-                    cursor: not-allowed;
-                }
-            }
-        }
-    }
+  }
 }
 
-
-
-.kuma-tab-top, .kuma-tab-bottom {
-    overflow-x: hidden;
-    background: white;
-    .kuma-tab-nav-container-scrolling {
-        padding-left: 32px;
-        padding-right: 32px;
+.kuma-tab-top,
+.kuma-tab-bottom {
+  overflow-x: hidden;
+  background: white;
+  .kuma-tab-nav-container-scrolling {
+    padding-left: 32px;
+    padding-right: 32px;
+  }
+  .kuma-tab-nav-scroll {
+    width: 99999px; // border-bottom: 1px solid @split-line-color;
+  }
+  .kuma-tab-nav-wrap {
+    width: 100%;
+  }
+  .kuma-tab-content-animated {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: row;
+    flex-direction: row;
+    .kuma-tab-tabpane {
+      transition: opacity 0.3s ease-out;
+      opacity: 1;
+      width: 100%;
+      display: block;
     }
-    .kuma-tab-nav-scroll {
-        width: 99999px;
-        // border-bottom: 1px solid @split-line-color;
+    .kuma-tab-tabpane-inactive {
+      opacity: 0;
+      height: 0;
     }
-    .kuma-tab-nav-wrap {
-        width: 100%;
-    }
-    .kuma-tab-content-animated {
-        -webkit-box-orient: horizontal;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: row;
-        flex-direction: row;
-        .kuma-tab-tabpane {
-            transition: opacity 0.3s ease-out;
-            opacity: 1;
-            width: 100%;
-            display: block;
-        }
-        .kuma-tab-tabpane-inactive {
-            opacity: 0;
-            height: 0;
-        }
-    }
+  }
 }
 
-
-.kuma-tab-left, .kuma-tab-right {
-    overflow-y: hidden;
-    height: 100%;
-    background: white;
-    display: flex;
-    .kuma-tab-nav-scroll {
-        width: auto;
-    }
-    .kuma-tab-bar {
-        width: auto;
-        .kuma-tab-nav-container {
-            height: 100% !important;
-            .kuma-tab-nav-wrap {
-                height: 100%;
-            }
-            .kuma-tab-nav.kuma-tab-nav-animated { 
-                .kuma-tab-ink-bar {
-                    width: 2px;
-                    height: 49px;
-                    top: 0;
-                }
-            }
-
-            .kuma-tab-tab-prev {
-                top: 2px;
-            }
-    
-            .kuma-tab-tab {
-                margin: 0;
-                display: block;
-                &-next-icon:before {
-                  content: "\e642";
-                }
-                &-prev-icon:before {
-                  content: "\e641";
-                }
-            }
-        }
-        .kuma-tab-nav-container-scrolling {
-            padding-top: 32px;
-            padding-bottom: 32px;
-            width: auto;
-            .kuma-tab-tab-prev,
-            .kuma-tab-tab-next {
-                margin-top: -2px;
-                height: 32px;
-                line-height: 32px;
-                width: 100%;
-                display: block;
-                text-align: center;
-            }
-            .kuma-tab-tab-next {
-                bottom: 0;
-                top: auto;
-            }
-        }
-    }
-    .kuma-tab-tab-active {
-        border: 0;
-    }
-    .kuma-tab-content {
-        flex: 1;
-    }
-    .kuma-tab-content-animated {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        -webkit-transform: none!important;
-        -ms-transform: none!important;
-        transform: none!important;
+.kuma-tab-left,
+.kuma-tab-right {
+  overflow-y: hidden;
+  height: 100%;
+  background: white;
+  display: flex;
+  .kuma-tab-nav-scroll {
+    width: auto;
+  }
+  .kuma-tab-bar {
+    width: auto;
+    .kuma-tab-nav-container {
+      height: 100% !important;
+      .kuma-tab-nav-wrap {
         height: 100%;
-        .kuma-tab-tabpane {
-            height: 100%;
+      }
+      .kuma-tab-nav.kuma-tab-nav-animated {
+        .kuma-tab-ink-bar {
+          width: 2px;
+          height: 49px;
+          top: 0;
         }
-        .kuma-tab-tabpane-inactive {
-            display: none;
+      }
+      .kuma-tab-tab-prev {
+        top: 2px;
+      }
+      .kuma-tab-tab {
+        margin: 0;
+        display: block;
+        &-next-icon:before {
+          content: "\e642";
         }
+        &-prev-icon:before {
+          content: "\e641";
+        }
+      }
     }
+    .kuma-tab-nav-container-scrolling {
+      padding-top: 32px;
+      padding-bottom: 32px;
+      width: auto;
+      .kuma-tab-tab-prev,
+      .kuma-tab-tab-next {
+        margin-top: -2px;
+        height: 32px;
+        line-height: 32px;
+        width: 100%;
+        display: block;
+        text-align: center;
+      }
+      .kuma-tab-tab-next {
+        bottom: 0;
+        top: auto;
+      }
+    }
+  }
+  .kuma-tab-tab-active {
+    border: 0;
+    border-bottom: 1px solid @split-line-color;
+    border-top: 1px solid @split-line-color;
+  }
+  .kuma-tab-content {
+    flex: 1;
+  }
+  .kuma-tab-content-animated {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    -webkit-transform: none!important;
+    -ms-transform: none!important;
+    transform: none!important;
+    height: 100%;
+    .kuma-tab-tabpane {
+      height: 100%;
+    }
+    .kuma-tab-tabpane-inactive {
+      display: none;
+    }
+  }
 }
 
 .kuma-tab-left {
-    border-right: 2px solid #f3f3f3;
-    .kuma-tab-bar {
-        float: left;
-        margin-bottom: 0;
-        border-right: 1px solid #f3f3f3;
-        .kuma-tab-nav-container {
-            .kuma-tab-nav.kuma-tab-nav-animated {
-                .kuma-tab-ink-bar {
-                    left: 0;
-                }
-            }
+  border-right: 2px solid @split-line-color;
+  .kuma-tab-bar {
+    float: left;
+    margin-bottom: 0;
+    border-right: 1px solid @split-line-color;
+    .kuma-tab-nav-container {
+      .kuma-tab-nav.kuma-tab-nav-animated {
+        .kuma-tab-ink-bar {
+          left: 0;
         }
+      }
     }
-    .kuma-tab-content-animated {
-        -webkit-box-orient: vertical;
-        -webkit-box-direction: normal;
-        -ms-flex-direction: column;
-        flex-direction: column;
-        .kuma-tab-tabpane {
-            height: 100%;
-        }
+  }
+  .kuma-tab-content-animated {
+    -webkit-box-orient: vertical;
+    -webkit-box-direction: normal;
+    -ms-flex-direction: column;
+    flex-direction: column;
+    .kuma-tab-tabpane {
+      height: 100%;
     }
+  }
 }
 
 .kuma-tab-right {
-    border-left: 2px solid #f3f3f3;
-    .kuma-tab-bar {
-        float: right;
-        margin-left: 10px;
-        border-left: 1px solid #f3f3f3;
-        .kuma-tab-nav-container {
-            .kuma-tab-nav.kuma-tab-nav-animated { 
-                  .kuma-tab-ink-bar {
-                      right: 0;
-                  }
-              }
+  border-left: 2px solid @split-line-color;
+  .kuma-tab-bar {
+    float: right;
+    margin-left: 10px;
+    border-left: 1px solid @split-line-color;
+    .kuma-tab-nav-container {
+      .kuma-tab-nav.kuma-tab-nav-animated {
+        .kuma-tab-ink-bar {
+          right: 0;
         }
+      }
     }
+  }
 }
 
 .no-flexbox .kuma-tab-content {
-    -webkit-transform: none !important;
-    transform: none !important;
-    overflow: auto;
+  -webkit-transform: none !important;
+  transform: none !important;
+  overflow: auto;
 }
+
 .no-csstransitions .kuma-tab-tabpane-inactive,
 .no-flexbox .kuma-tab-tabpane-inactive,
 .kuma-tab-content-no-animated .kuma-tab-tabpane-inactive {
-    display: none !important;
+  display: none !important;
 }

@@ -75,6 +75,8 @@ React.render(
 |animated|boolean|true|whether have animation effect when switch tab |
 |tabBarPosition|string|top|`top` `bottom` `left` `right` |
 |extraContent|ReactNode|null|the extra content on tab bar |
+|tabBarStyle|object|{}|TabBar's style |
+|tabContentStyle|object|{}|TabContent's style |
 
 
 

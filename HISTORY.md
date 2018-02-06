@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.12 
+
+* `NEW` support `tabBarStyle` & `tabContentStyle`
+
 ## 0.6.11
 
 * `FIXED` ink bar height 

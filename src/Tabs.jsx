@@ -31,7 +31,7 @@ class Tabs extends React.Component {
 
   render() {
     const { props } = this;
-    const { onTabClick, extraContent, animated, prefixCls } = props;
+    const { onTabClick, extraContent, animated, prefixCls, tabBarStyle, tabContentStyle } = props;
     return (
       <RcTabs
         {...props}
@@ -44,9 +44,10 @@ class Tabs extends React.Component {
           <ScrollableInkTabBar
             extraContent={extraContent}
             onTabClick={onTabClick}
+            style={tabBarStyle}
           />
         )}
-        renderTabContent={() => <TabContent animated={animated} />}
+        renderTabContent={() => <TabContent animated={animated} style={tabContentStyle} />}
       />
     );
   }
@@ -59,6 +60,8 @@ Tabs.propTypes = {
   type: PropTypes.oneOf(['large', 'small', 'filter', 'brick', 'open']),
   animated: PropTypes.bool,
   extraContent: PropTypes.element,
+  tabBarStyle: PropTypes.object,
+  tabContentStyle: PropTypes.object,
 };
 
 
@@ -67,6 +70,8 @@ Tabs.defaultProps = assign({}, RcTabs.defaultProps, {
   type: 'large',
   animated: true,
   onTabClick: () => {},
+  tabBarStyle: {},
+  tabContentStyle: {},
 });
 
 Tabs.displayName = 'uxcore-tabs';
