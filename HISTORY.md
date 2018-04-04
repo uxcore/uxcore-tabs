@@ -1,6 +1,10 @@
 # History
 ----
 
+## 0.6.13
+
+* `CHANGED` change open type font-size to `14px`
+
 ## 0.6.12 
 
 * `NEW` support `tabBarStyle` & `tabContentStyle`
