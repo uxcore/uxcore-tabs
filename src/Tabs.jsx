@@ -16,7 +16,8 @@ const TYPESUFFIX = {
 
 
 class Tabs extends React.Component {
-  componentWillMount() {
+  constructor() {
+    super();
     if (document) {
       const docEle = document.documentElement;
 

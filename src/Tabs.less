@@ -92,11 +92,17 @@
           border: none;
           position: absolute;
           margin-right: -2px;
-          width: 32px;
-          height: 100%;
+          width: 0;
+          height: 0;
           top: 0;
           text-align: center;
           color: #666;
+          overflow: hidden;
+          &.kuma-tab-tab-arrow-show {
+            overflow:visible;
+            width: 32px;
+            height: 100%;
+          }
         }
         &-prev-icon,
         &-next-icon {
@@ -343,11 +349,18 @@
           border: none;
           position: absolute;
           margin-right: -2px;
-          width: 32px;
-          height: 100%;
+          width: 0;
+          height: 0;
           top: 0;
           text-align: center;
           color: #666;
+          overflow: hidden;
+
+          &.kuma-tab-tab-arrow-show {
+            overflow:visible;
+            width: 32px;
+            height: 100%;
+          }
         }
         &-prev-icon,
         &-next-icon {
