@@ -2,7 +2,7 @@ import expect from 'expect.js';
 import React from 'react';
 import PropTypes from 'prop-types';
 import Enzyme, { mount, shallow } from 'enzyme';
-import Adapter from 'enzyme-adapter-react-15';
+import Adapter from 'enzyme-adapter-react-16';
 import RcTabs from 'rc-tabs';
 import TabContent from 'rc-tabs/lib/TabContent';
 import ScrollableInkTabBar from 'rc-tabs/lib/ScrollableInkTabBar';
@@ -51,7 +51,6 @@ describe('Tabs', () => {
     let wrapper = mount(<Tabs {...props} />);
     const scrollableInkTabBarProps = wrapper.find(ScrollableInkTabBar).props();
     let tabContentProps = wrapper.find(TabContent).props();
-    expect(scrollableInkTabBarProps.onTabClick.__reactBoundContext.tabBar.props.onTabClick).to.eql(props.onTabClick); // 因为依赖组件的实现没有immutable props
     expect(scrollableInkTabBarProps.extraContent).to.eql(props.extraContent);
     expect(tabContentProps).to.have.property('animated', props.animated);
     props.animated = true;
