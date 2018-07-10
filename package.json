@@ -1,6 +1,6 @@
 {
   "name": "uxcore-tabs",
-  "version": "0.8.0",
+  "version": "0.7.1",
   "description": "easy tab component based on react",
   "main": "build/index.js",
   "scripts": {
@@ -40,7 +40,7 @@
    "classnames": "^2.1.2",
    "object-assign": "^4.0.0",
    "prop-types": "15.x",
-   "rc-tabs": "~7.5.0"
+   "rc-tabs": "~9.2.5"
   },
   "devDependencies": {
    "console-polyfill": "^0.2.2",
