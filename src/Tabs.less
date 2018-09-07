@@ -6,18 +6,20 @@
  * All rights reserved.
  */
 
-.kuma-tab-bar {
+ @__tabPrefixCls: kuma-tab;
+
+.@{__tabPrefixCls}-bar {
   outline: 0 none;
 }
 
-.kuma-tab {
+.@{__tabPrefixCls} {
   // 嵌套用
-  .kuma-tab {
+  .@{__tabPrefixCls} {
     border: none;
   }
   &-bar {
     border-bottom: 1px solid @split-line-color;
-    .kuma-tab-tab {
+    .@{__tabPrefixCls}-tab {
       transition: background-color 0.3s ease-out, color 0.3s ease-out;
       display: inline-block;
       vertical-align: top;
@@ -41,7 +43,7 @@
   }
   &-content {
     zoom: 1;
-    .kuma-tab-tabpane {
+    .@{__tabPrefixCls}-tabpane {
       overflow: auto;
       -ms-flex-negative: 0;
       flex-shrink: 0;
@@ -56,14 +58,14 @@
       will-change: transform;
     }
   }
-  &.kuma-tab-lg,
-  &.kuma-tab-sm {
-    >.kuma-tab-bar {
-      .kuma-tab-nav {
+  &.@{__tabPrefixCls}-lg,
+  &.@{__tabPrefixCls}-sm {
+    >.@{__tabPrefixCls}-bar {
+      .@{__tabPrefixCls}-nav {
         position: relative;
         display: inline-block;
         transform-origin: 0 0;
-        .kuma-tab-ink-bar {
+        .@{__tabPrefixCls}-ink-bar {
           position: absolute;
           top: 0px;
           height: 2px;
@@ -81,7 +83,7 @@
           overflow: hidden;
         }
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         padding: 0 24px;
         &-prev,
         &-next {
@@ -98,7 +100,7 @@
           text-align: center;
           color: #666;
           overflow: hidden;
-          &.kuma-tab-tab-arrow-show {
+          &.@{__tabPrefixCls}-tab-arrow-show {
             overflow:visible;
             width: 32px;
             height: 100%;
@@ -136,13 +138,13 @@
     }
   } // large
   @__tab_lg_height: 49px;
-  &.kuma-tab-lg {
-    >.kuma-tab-bar {
+  &.@{__tabPrefixCls}-lg {
+    >.@{__tabPrefixCls}-bar {
       background-color: white;
-      .kuma-tab-nav-container {
+      .@{__tabPrefixCls}-nav-container {
         border-bottom: 0;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         margin-left: -1px;
         height: @__tab_lg_height;
         line-height: @__tab_lg_height;
@@ -161,23 +163,23 @@
       }
     }
   }
-  &.kuma-tab-lg.kuma-tab-top,
-  &.kuma-tab-lg.kuma-tab-bottom {
-    >.kuma-tab-bar {
+  &.@{__tabPrefixCls}-lg.@{__tabPrefixCls}-top,
+  &.@{__tabPrefixCls}-lg.@{__tabPrefixCls}-bottom {
+    >.@{__tabPrefixCls}-bar {
       height: @__tab_lg_height;
-      .kuma-tab-nav-container {
+      .@{__tabPrefixCls}-nav-container {
         height: @__tab_lg_height;
       }
     }
   } // small
   @__tab_sm_height: 40px;
-  &.kuma-tab-sm {
-    >.kuma-tab-bar {
+  &.@{__tabPrefixCls}-sm {
+    >.@{__tabPrefixCls}-bar {
       background-color: white;
-      .kuma-tab-nav-container {
+      .@{__tabPrefixCls}-nav-container {
         border-bottom: 0;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         margin-left: -1px;
         height: @__tab_sm_height;
         line-height: @__tab_sm_height;
@@ -198,23 +200,23 @@
       }
     }
   }
-  &.kuma-tab-sm.kuma-tab-top,
-  &.kuma-tab-sm.kuma-tab-bottom {
-    >.kuma-tab-bar {
+  &.@{__tabPrefixCls}-sm.@{__tabPrefixCls}-top,
+  &.@{__tabPrefixCls}-sm.@{__tabPrefixCls}-bottom {
+    >.@{__tabPrefixCls}-bar {
       height: @__tab_sm_height;
-      .kuma-tab-nav-container {
+      .@{__tabPrefixCls}-nav-container {
         height: @__tab_sm_height;
       }
     }
   } // filter
-  &.kuma-tab-filter {
+  &.@{__tabPrefixCls}-filter {
     @__tab_filter_height: 20px;
     background: transparent;
-    >.kuma-tab-bar {
-      .kuma-tab-nav-container {
+    >.@{__tabPrefixCls}-bar {
+      .@{__tabPrefixCls}-nav-container {
         padding: 20px 30px;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         margin: 5px 0;
         padding: 0 25px;
         height: @__tab_filter_height;
@@ -237,14 +239,14 @@
       }
     }
   } // brick
-  &.kuma-tab-brick {
+  &.@{__tabPrefixCls}-brick {
     @__tab_brick_height: 28px;
     background: transparent;
-    >.kuma-tab-bar {
-      .kuma-tab-nav-container {
+    >.@{__tabPrefixCls}-bar {
+      .@{__tabPrefixCls}-nav-container {
         padding: 20px 30px;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         height: @__tab_brick_height;
         line-height: @__tab_brick_height - 2;
         border-color: @border-color;
@@ -256,7 +258,7 @@
           background-color: @brand-primary-alpha-8;
           color: @brand-primary;
           border-color: @brand-primary;
-          &+.kuma-tab-tab {
+          &+.@{__tabPrefixCls}-tab {
             border-left-color: @brand-primary;
           }
         }
@@ -275,25 +277,25 @@
       }
     }
   }
-  &.kuma-tab-filter,
-  &.kuma-tab-brick {
-    &.kuma-tab-top {
-      .kuma-tab-bar {
+  &.@{__tabPrefixCls}-filter,
+  &.@{__tabPrefixCls}-brick {
+    &.@{__tabPrefixCls}-top {
+      .@{__tabPrefixCls}-bar {
         border-bottom: none;
       }
     }
   }
-  &.kuma-tab-open {
+  &.@{__tabPrefixCls}-open {
     @__tab_lg_height: 49px;
     background-color: #fff;
-    >.kuma-tab-bar {
+    >.@{__tabPrefixCls}-bar {
       height: @__tab_lg_height;
       border-bottom: 1px solid @split-line-color;
-      .kuma-tab-nav-container {
+      .@{__tabPrefixCls}-nav-container {
         height: @__tab_lg_height;
         border-bottom: 0;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         margin-left: -1px;
         height: @__tab_lg_height;
         line-height: @__tab_lg_height;
@@ -310,13 +312,13 @@
         }
       }
     }
-    >.kuma-tab-bar {
-      .kuma-tab-nav {
+    >.@{__tabPrefixCls}-bar {
+      .@{__tabPrefixCls}-nav {
         position: relative;
         display: inline-block;
         -webkit-transform-origin: 0 0;
         transform-origin: 0 0;
-        .kuma-tab-ink-bar {
+        .@{__tabPrefixCls}-ink-bar {
           position: absolute;
           bottom: 0px;
           height: 2px;
@@ -335,7 +337,7 @@
           overflow: hidden;
         }
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         padding: 0 24px;
         &-prev,
         &-next {
@@ -356,7 +358,7 @@
           color: #666;
           overflow: hidden;
 
-          &.kuma-tab-tab-arrow-show {
+          &.@{__tabPrefixCls}-tab-arrow-show {
             overflow:visible;
             width: 32px;
             height: 100%;
@@ -395,65 +397,65 @@
   }
 }
 
-.kuma-tab-top,
-.kuma-tab-bottom {
+.@{__tabPrefixCls}-top,
+.@{__tabPrefixCls}-bottom {
   overflow-x: hidden;
   background: white;
-  .kuma-tab-nav-container-scrolling {
+  .@{__tabPrefixCls}-nav-container-scrolling {
     padding-left: 32px;
     padding-right: 32px;
   }
-  .kuma-tab-nav-scroll {
+  .@{__tabPrefixCls}-nav-scroll {
     width: 99999px; // border-bottom: 1px solid @split-line-color;
   }
-  .kuma-tab-nav-wrap {
+  .@{__tabPrefixCls}-nav-wrap {
     width: 100%;
   }
-  .kuma-tab-content-animated {
+  .@{__tabPrefixCls}-content-animated {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
     -ms-flex-direction: row;
     flex-direction: row;
-    .kuma-tab-tabpane {
+    .@{__tabPrefixCls}-tabpane {
       transition: opacity 0.3s ease-out;
       opacity: 1;
       width: 100%;
       display: block;
     }
-    .kuma-tab-tabpane-inactive {
+    .@{__tabPrefixCls}-tabpane-inactive {
       opacity: 0;
       height: 0;
     }
   }
 }
 
-.kuma-tab-left,
-.kuma-tab-right {
+.@{__tabPrefixCls}-left,
+.@{__tabPrefixCls}-right {
   overflow-y: hidden;
   height: 100%;
   background: white;
   display: flex;
-  .kuma-tab-nav-scroll {
+  .@{__tabPrefixCls}-nav-scroll {
     width: auto;
   }
-  .kuma-tab-bar {
+  .@{__tabPrefixCls}-bar {
     width: auto;
-    .kuma-tab-nav-container {
+    .@{__tabPrefixCls}-nav-container {
       height: 100% !important;
-      .kuma-tab-nav-wrap {
+      .@{__tabPrefixCls}-nav-wrap {
         height: 100%;
       }
-      .kuma-tab-nav.kuma-tab-nav-animated {
-        .kuma-tab-ink-bar {
+      .@{__tabPrefixCls}-nav.@{__tabPrefixCls}-nav-animated {
+        .@{__tabPrefixCls}-ink-bar {
           width: 2px;
           height: 49px;
           top: 0;
         }
       }
-      .kuma-tab-tab-prev {
+      .@{__tabPrefixCls}-tab-prev {
         top: 2px;
       }
-      .kuma-tab-tab {
+      .@{__tabPrefixCls}-tab {
         margin: 0;
         display: block;
         &-next-icon:before {
@@ -464,12 +466,12 @@
         }
       }
     }
-    .kuma-tab-nav-container-scrolling {
+    .@{__tabPrefixCls}-nav-container-scrolling {
       padding-top: 32px;
       padding-bottom: 32px;
       width: auto;
-      .kuma-tab-tab-prev,
-      .kuma-tab-tab-next {
+      .@{__tabPrefixCls}-tab-prev,
+      .@{__tabPrefixCls}-tab-next {
         margin-top: -2px;
         height: 32px;
         line-height: 32px;
@@ -477,21 +479,21 @@
         display: block;
         text-align: center;
       }
-      .kuma-tab-tab-next {
+      .@{__tabPrefixCls}-tab-next {
         bottom: 0;
         top: auto;
       }
     }
   }
-  .kuma-tab-tab-active {
+  .@{__tabPrefixCls}-tab-active {
     border: 0;
     border-bottom: 1px solid @split-line-color;
     border-top: 1px solid @split-line-color;
   }
-  .kuma-tab-content {
+  .@{__tabPrefixCls}-content {
     flex: 1;
   }
-  .kuma-tab-content-animated {
+  .@{__tabPrefixCls}-content-animated {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
@@ -500,49 +502,49 @@
     -ms-transform: none!important;
     transform: none!important;
     height: 100%;
-    .kuma-tab-tabpane {
+    .@{__tabPrefixCls}-tabpane {
       height: 100%;
     }
-    .kuma-tab-tabpane-inactive {
+    .@{__tabPrefixCls}-tabpane-inactive {
       display: none;
     }
   }
 }
 
-.kuma-tab-left {
+.@{__tabPrefixCls}-left {
   border-right: 2px solid @split-line-color;
-  .kuma-tab-bar {
+  .@{__tabPrefixCls}-bar {
     float: left;
     margin-bottom: 0;
     border-right: 1px solid @split-line-color;
-    .kuma-tab-nav-container {
-      .kuma-tab-nav.kuma-tab-nav-animated {
-        .kuma-tab-ink-bar {
+    .@{__tabPrefixCls}-nav-container {
+      .@{__tabPrefixCls}-nav.@{__tabPrefixCls}-nav-animated {
+        .@{__tabPrefixCls}-ink-bar {
           left: 0;
         }
       }
     }
   }
-  .kuma-tab-content-animated {
+  .@{__tabPrefixCls}-content-animated {
     -webkit-box-orient: vertical;
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    .kuma-tab-tabpane {
+    .@{__tabPrefixCls}-tabpane {
       height: 100%;
     }
   }
 }
 
-.kuma-tab-right {
+.@{__tabPrefixCls}-right {
   border-left: 2px solid @split-line-color;
-  .kuma-tab-bar {
+  .@{__tabPrefixCls}-bar {
     float: right;
     margin-left: 10px;
     border-left: 1px solid @split-line-color;
-    .kuma-tab-nav-container {
-      .kuma-tab-nav.kuma-tab-nav-animated {
-        .kuma-tab-ink-bar {
+    .@{__tabPrefixCls}-nav-container {
+      .@{__tabPrefixCls}-nav.@{__tabPrefixCls}-nav-animated {
+        .@{__tabPrefixCls}-ink-bar {
           right: 0;
         }
       }
@@ -550,14 +552,14 @@
   }
 }
 
-.no-flexbox .kuma-tab-content {
+.no-flexbox .@{__tabPrefixCls}-content {
   -webkit-transform: none !important;
   transform: none !important;
   overflow: auto;
 }
 
-.no-csstransitions .kuma-tab-tabpane-inactive,
-.no-flexbox .kuma-tab-tabpane-inactive,
-.kuma-tab-content-no-animated .kuma-tab-tabpane-inactive {
+.no-csstransitions .@{__tabPrefixCls}-tabpane-inactive,
+.no-flexbox .@{__tabPrefixCls}-tabpane-inactive,
+.@{__tabPrefixCls}-content-no-animated .@{__tabPrefixCls}-tabpane-inactive {
   display: none !important;
 }
